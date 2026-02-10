@@ -1,0 +1,15 @@
+import { Outlet } from "react-router";
+import { AdminSidebar } from "./AdminSidebar";
+
+export function AdminLayout() {
+  return (
+    <div className="flex min-h-screen bg-slate-50">
+      <AdminSidebar />
+      <main className="flex-1 overflow-y-auto">
+        <div className="p-6 lg:p-8">
+          <Outlet />
+        </div>
+      </main>
+    </div>
+  );
+}
