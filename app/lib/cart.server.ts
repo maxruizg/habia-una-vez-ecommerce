@@ -15,10 +15,7 @@ export interface Cart {
   guestCount?: number;
 }
 
-const cartSessionSecret = process.env.SESSION_SECRET;
-if (!cartSessionSecret) {
-  throw new Error("SESSION_SECRET must be set");
-}
+const cartSessionSecret = process.env.SESSION_SECRET || "default-dev-secret-change-in-production";
 
 const cartStorage = createCookieSessionStorage({
   cookie: {

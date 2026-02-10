@@ -1,0 +1,381 @@
+{
+  "buildManifest": {
+    "serverBundles": {
+      "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0": {
+        "id": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+        "file": "build/server/nodejs_eyJydW50aW1lIjoibm9kZWpzIn0/index.js",
+        "config": {
+          "runtime": "nodejs"
+        }
+      }
+    },
+    "routeIdToServerBundleId": {
+      "routes/home": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/reservar": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/carrito": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/checkout": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/confirmacion.$bookingNumber": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/api.cart": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/admin.login": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/admin._index": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/admin.calendario": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/admin.reservas._index": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/admin.reservas.$id": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/admin.paquetes._index": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/admin.paquetes.$id": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/admin.addons._index": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/admin.configuracion": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0"
+    },
+    "routes": {
+      "root": {
+        "id": "root",
+        "file": "app/root.tsx",
+        "path": "",
+        "config": {}
+      },
+      "routes/home": {
+        "id": "routes/home",
+        "parentId": "root",
+        "file": "app/routes/home.tsx",
+        "index": true,
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/reservar": {
+        "id": "routes/reservar",
+        "parentId": "root",
+        "file": "app/routes/reservar.tsx",
+        "path": "reservar",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/carrito": {
+        "id": "routes/carrito",
+        "parentId": "root",
+        "file": "app/routes/carrito.tsx",
+        "path": "carrito",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/checkout": {
+        "id": "routes/checkout",
+        "parentId": "root",
+        "file": "app/routes/checkout.tsx",
+        "path": "checkout",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/confirmacion.$bookingNumber": {
+        "id": "routes/confirmacion.$bookingNumber",
+        "parentId": "root",
+        "file": "app/routes/confirmacion.$bookingNumber.tsx",
+        "path": "confirmacion/:bookingNumber",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/api.cart": {
+        "id": "routes/api.cart",
+        "parentId": "root",
+        "file": "app/routes/api.cart.ts",
+        "path": "api/cart",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/admin.login": {
+        "id": "routes/admin.login",
+        "parentId": "root",
+        "file": "app/routes/admin.login.tsx",
+        "path": "admin/login",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/admin": {
+        "id": "routes/admin",
+        "parentId": "root",
+        "file": "app/routes/admin.tsx",
+        "config": {}
+      },
+      "routes/admin._index": {
+        "id": "routes/admin._index",
+        "parentId": "routes/admin",
+        "file": "app/routes/admin._index.tsx",
+        "index": true,
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/admin.calendario": {
+        "id": "routes/admin.calendario",
+        "parentId": "routes/admin",
+        "file": "app/routes/admin.calendario.tsx",
+        "path": "admin/calendario",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/admin.reservas._index": {
+        "id": "routes/admin.reservas._index",
+        "parentId": "routes/admin",
+        "file": "app/routes/admin.reservas._index.tsx",
+        "path": "admin/reservas",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/admin.reservas.$id": {
+        "id": "routes/admin.reservas.$id",
+        "parentId": "routes/admin",
+        "file": "app/routes/admin.reservas.$id.tsx",
+        "path": "admin/reservas/:id",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/admin.paquetes._index": {
+        "id": "routes/admin.paquetes._index",
+        "parentId": "routes/admin",
+        "file": "app/routes/admin.paquetes._index.tsx",
+        "path": "admin/paquetes",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/admin.paquetes.$id": {
+        "id": "routes/admin.paquetes.$id",
+        "parentId": "routes/admin",
+        "file": "app/routes/admin.paquetes.$id.tsx",
+        "path": "admin/paquetes/:id",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/admin.addons._index": {
+        "id": "routes/admin.addons._index",
+        "parentId": "routes/admin",
+        "file": "app/routes/admin.addons._index.tsx",
+        "path": "admin/addons",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/admin.configuracion": {
+        "id": "routes/admin.configuracion",
+        "parentId": "routes/admin",
+        "file": "app/routes/admin.configuracion.tsx",
+        "path": "admin/configuracion",
+        "config": {
+          "runtime": "nodejs"
+        }
+      }
+    }
+  },
+  "reactRouterConfig": {
+    "appDirectory": "/Users/maxruizg/Workspace/Personal/Landings/habia-una-vez/app",
+    "basename": "/",
+    "buildDirectory": "/Users/maxruizg/Workspace/Personal/Landings/habia-una-vez/build",
+    "future": {
+      "unstable_optimizeDeps": false,
+      "unstable_subResourceIntegrity": false,
+      "unstable_trailingSlashAwareDataRequests": false,
+      "v8_middleware": false,
+      "v8_splitRouteModules": false,
+      "v8_viteEnvironmentApi": false
+    },
+    "routes": {
+      "root": {
+        "id": "root",
+        "file": "root.tsx",
+        "path": ""
+      },
+      "routes/home": {
+        "id": "routes/home",
+        "parentId": "root",
+        "file": "routes/home.tsx",
+        "index": true
+      },
+      "routes/reservar": {
+        "id": "routes/reservar",
+        "parentId": "root",
+        "file": "routes/reservar.tsx",
+        "path": "reservar"
+      },
+      "routes/carrito": {
+        "id": "routes/carrito",
+        "parentId": "root",
+        "file": "routes/carrito.tsx",
+        "path": "carrito"
+      },
+      "routes/checkout": {
+        "id": "routes/checkout",
+        "parentId": "root",
+        "file": "routes/checkout.tsx",
+        "path": "checkout"
+      },
+      "routes/confirmacion.$bookingNumber": {
+        "id": "routes/confirmacion.$bookingNumber",
+        "parentId": "root",
+        "file": "routes/confirmacion.$bookingNumber.tsx",
+        "path": "confirmacion/:bookingNumber"
+      },
+      "routes/api.cart": {
+        "id": "routes/api.cart",
+        "parentId": "root",
+        "file": "routes/api.cart.ts",
+        "path": "api/cart"
+      },
+      "routes/admin.login": {
+        "id": "routes/admin.login",
+        "parentId": "root",
+        "file": "routes/admin.login.tsx",
+        "path": "admin/login"
+      },
+      "routes/admin": {
+        "id": "routes/admin",
+        "parentId": "root",
+        "file": "routes/admin.tsx"
+      },
+      "routes/admin._index": {
+        "id": "routes/admin._index",
+        "parentId": "routes/admin",
+        "file": "routes/admin._index.tsx",
+        "index": true
+      },
+      "routes/admin.calendario": {
+        "id": "routes/admin.calendario",
+        "parentId": "routes/admin",
+        "file": "routes/admin.calendario.tsx",
+        "path": "admin/calendario"
+      },
+      "routes/admin.reservas._index": {
+        "id": "routes/admin.reservas._index",
+        "parentId": "routes/admin",
+        "file": "routes/admin.reservas._index.tsx",
+        "path": "admin/reservas"
+      },
+      "routes/admin.reservas.$id": {
+        "id": "routes/admin.reservas.$id",
+        "parentId": "routes/admin",
+        "file": "routes/admin.reservas.$id.tsx",
+        "path": "admin/reservas/:id"
+      },
+      "routes/admin.paquetes._index": {
+        "id": "routes/admin.paquetes._index",
+        "parentId": "routes/admin",
+        "file": "routes/admin.paquetes._index.tsx",
+        "path": "admin/paquetes"
+      },
+      "routes/admin.paquetes.$id": {
+        "id": "routes/admin.paquetes.$id",
+        "parentId": "routes/admin",
+        "file": "routes/admin.paquetes.$id.tsx",
+        "path": "admin/paquetes/:id"
+      },
+      "routes/admin.addons._index": {
+        "id": "routes/admin.addons._index",
+        "parentId": "routes/admin",
+        "file": "routes/admin.addons._index.tsx",
+        "path": "admin/addons"
+      },
+      "routes/admin.configuracion": {
+        "id": "routes/admin.configuracion",
+        "parentId": "routes/admin",
+        "file": "routes/admin.configuracion.tsx",
+        "path": "admin/configuracion"
+      }
+    },
+    "routeDiscovery": {
+      "mode": "lazy",
+      "manifestPath": "/__manifest"
+    },
+    "serverBuildFile": "index.js",
+    "serverModuleFormat": "esm",
+    "ssr": true,
+    "allowedActionOrigins": false,
+    "unstable_routeConfig": [
+      {
+        "id": "root",
+        "path": "",
+        "file": "root.tsx",
+        "children": [
+          {
+            "file": "routes/home.tsx",
+            "index": true
+          },
+          {
+            "file": "routes/reservar.tsx",
+            "path": "reservar"
+          },
+          {
+            "file": "routes/carrito.tsx",
+            "path": "carrito"
+          },
+          {
+            "file": "routes/checkout.tsx",
+            "path": "checkout"
+          },
+          {
+            "file": "routes/confirmacion.$bookingNumber.tsx",
+            "path": "confirmacion/:bookingNumber"
+          },
+          {
+            "file": "routes/api.cart.ts",
+            "path": "api/cart"
+          },
+          {
+            "file": "routes/admin.login.tsx",
+            "path": "admin/login"
+          },
+          {
+            "file": "routes/admin.tsx",
+            "children": [
+              {
+                "file": "routes/admin._index.tsx",
+                "index": true
+              },
+              {
+                "file": "routes/admin.calendario.tsx",
+                "path": "admin/calendario"
+              },
+              {
+                "file": "routes/admin.reservas._index.tsx",
+                "path": "admin/reservas"
+              },
+              {
+                "file": "routes/admin.reservas.$id.tsx",
+                "path": "admin/reservas/:id"
+              },
+              {
+                "file": "routes/admin.paquetes._index.tsx",
+                "path": "admin/paquetes"
+              },
+              {
+                "file": "routes/admin.paquetes.$id.tsx",
+                "path": "admin/paquetes/:id"
+              },
+              {
+                "file": "routes/admin.addons._index.tsx",
+                "path": "admin/addons"
+              },
+              {
+                "file": "routes/admin.configuracion.tsx",
+                "path": "admin/configuracion"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "viteConfig": {
+    "build": {
+      "assetsDir": "assets"
+    }
+  }
+}
