@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fffef7"/>
+      <stop offset="100%" stop-color="#fef3c7"/>
+    </linearGradient>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f0abfe"/>
+      <stop offset="100%" stop-color="#e9d5ff"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="600" fill="url(#bg)"/>
+
+  <!-- Back wall -->
+  <rect x="40" y="60" width="520" height="340" rx="18" fill="url(#wall)" opacity="0.45"/>
+
+  <!-- Floor -->
+  <rect x="0" y="380" width="600" height="220" rx="0" fill="#14b8a6" opacity="0.13"/>
+
+  <!-- Window left -->
+  <rect x="80" y="110" width="90" height="110" rx="12" fill="#fffef7" opacity="0.7"/>
+  <line x1="125" y1="110" x2="125" y2="220" stroke="#a855f7" stroke-width="2" opacity="0.5"/>
+  <line x1="80" y1="165" x2="170" y2="165" stroke="#a855f7" stroke-width="2" opacity="0.5"/>
+
+  <!-- Window right -->
+  <rect x="430" y="110" width="90" height="110" rx="12" fill="#fffef7" opacity="0.7"/>
+  <line x1="475" y1="110" x2="475" y2="220" stroke="#a855f7" stroke-width="2" opacity="0.5"/>
+  <line x1="430" y1="165" x2="520" y2="165" stroke="#a855f7" stroke-width="2" opacity="0.5"/>
+
+  <!-- Banner / bunting across top -->
+  <line x1="60" y1="80" x2="540" y2="80" stroke="#f59e0b" stroke-width="2.5"/>
+  <!-- Triangles -->
+  <polygon points="90,80 110,80 100,108" fill="#ec4899" opacity="0.85"/>
+  <polygon points="130,80 150,80 140,108" fill="#14b8a6" opacity="0.85"/>
+  <polygon points="170,80 190,80 180,108" fill="#f59e0b" opacity="0.85"/>
+  <polygon points="210,80 230,80 220,108" fill="#a855f7" opacity="0.85"/>
+  <polygon points="250,80 270,80 260,108" fill="#ec4899" opacity="0.85"/>
+  <polygon points="290,80 310,80 300,108" fill="#14b8a6" opacity="0.85"/>
+  <polygon points="330,80 350,80 340,108" fill="#f59e0b" opacity="0.85"/>
+  <polygon points="370,80 390,80 380,108" fill="#a855f7" opacity="0.85"/>
+  <polygon points="410,80 430,80 420,108" fill="#ec4899" opacity="0.85"/>
+  <polygon points="450,80 470,80 460,108" fill="#14b8a6" opacity="0.85"/>
+  <polygon points="490,80 510,80 500,108" fill="#f59e0b" opacity="0.85"/>
+
+  <!-- Party table -->
+  <rect x="150" y="370" width="300" height="18" rx="6" fill="#a855f7" opacity="0.75"/>
+  <rect x="170" y="388" width="16" height="90" rx="4" fill="#a855f7" opacity="0.6"/>
+  <rect x="414" y="388" width="16" height="90" rx="4" fill="#a855f7" opacity="0.6"/>
+
+  <!-- Tablecloth scallops -->
+  <circle cx="175" cy="388" r="14" fill="#ec4899" opacity="0.3"/>
+  <circle cx="205" cy="388" r="14" fill="#ec4899" opacity="0.3"/>
+  <circle cx="235" cy="388" r="14" fill="#ec4899" opacity="0.3"/>
+  <circle cx="265" cy="388" r="14" fill="#ec4899" opacity="0.3"/>
+  <circle cx="295" cy="388" r="14" fill="#ec4899" opacity="0.3"/>
+  <circle cx="325" cy="388" r="14" fill="#ec4899" opacity="0.3"/>
+  <circle cx="355" cy="388" r="14" fill="#ec4899" opacity="0.3"/>
+  <circle cx="385" cy="388" r="14" fill="#ec4899" opacity="0.3"/>
+  <circle cx="415" cy="388" r="14" fill="#ec4899" opacity="0.3"/>
+
+  <!-- Items on table: plates -->
+  <ellipse cx="220" cy="365" rx="24" ry="8" fill="#fffef7" opacity="0.8"/>
+  <ellipse cx="300" cy="362" rx="28" ry="10" fill="#fffef7" opacity="0.8"/>
+  <ellipse cx="380" cy="365" rx="24" ry="8" fill="#fffef7" opacity="0.8"/>
+
+  <!-- Small cake on table -->
+  <rect x="282" y="338" width="36" height="24" rx="6" fill="#ec4899" opacity="0.8"/>
+  <rect x="288" y="326" width="24" height="16" rx="5" fill="#f59e0b" opacity="0.8"/>
+  <rect x="298" y="316" width="4" height="12" rx="2" fill="#14b8a6"/>
+  <circle cx="300" cy="313" r="4" fill="#f59e0b" opacity="0.9"/>
+
+  <!-- Balloon cluster left -->
+  <ellipse cx="100" cy="260" rx="30" ry="38" fill="#ec4899" opacity="0.6"/>
+  <line x1="100" y1="298" x2="100" y2="360" stroke="#ec4899" stroke-width="1.5" opacity="0.5"/>
+  <ellipse cx="135" cy="240" rx="28" ry="35" fill="#14b8a6" opacity="0.55"/>
+  <line x1="135" y1="275" x2="120" y2="360" stroke="#14b8a6" stroke-width="1.5" opacity="0.5"/>
+  <ellipse cx="118" cy="218" rx="26" ry="32" fill="#f59e0b" opacity="0.55"/>
+  <line x1="118" y1="250" x2="110" y2="360" stroke="#f59e0b" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Balloon cluster right -->
+  <ellipse cx="500" cy="255" rx="30" ry="38" fill="#a855f7" opacity="0.6"/>
+  <line x1="500" y1="293" x2="500" y2="360" stroke="#a855f7" stroke-width="1.5" opacity="0.5"/>
+  <ellipse cx="465" cy="238" rx="28" ry="35" fill="#f59e0b" opacity="0.55"/>
+  <line x1="465" y1="273" x2="480" y2="360" stroke="#f59e0b" stroke-width="1.5" opacity="0.5"/>
+  <ellipse cx="482" cy="212" rx="26" ry="32" fill="#ec4899" opacity="0.55"/>
+  <line x1="482" y1="244" x2="490" y2="360" stroke="#ec4899" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Streamers from ceiling -->
+  <path d="M200,0 Q210,60 195,120 Q180,180 200,240" fill="none" stroke="#14b8a6" stroke-width="3" opacity="0.35"/>
+  <path d="M300,0 Q315,70 295,140 Q275,210 300,270" fill="none" stroke="#ec4899" stroke-width="3" opacity="0.35"/>
+  <path d="M400,0 Q390,55 405,110 Q420,165 400,220" fill="none" stroke="#f59e0b" stroke-width="3" opacity="0.35"/>
+
+  <!-- Confetti dots -->
+  <circle cx="70" cy="420" r="5" fill="#f59e0b" opacity="0.5"/>
+  <circle cx="530" cy="440" r="4" fill="#ec4899" opacity="0.5"/>
+  <circle cx="250" cy="500" r="6" fill="#a855f7" opacity="0.4"/>
+  <circle cx="450" cy="510" r="5" fill="#14b8a6" opacity="0.4"/>
+  <circle cx="150" cy="530" r="4" fill="#f59e0b" opacity="0.5"/>
+  <circle cx="350" cy="550" r="5" fill="#ec4899" opacity="0.4"/>
+
+  <!-- Stars -->
+  <polygon points="300,145 305,158 320,158 308,167 313,180 300,172 287,180 292,167 280,158 295,158" fill="#f59e0b" opacity="0.6"/>
+  <polygon points="230,180 234,190 245,190 236,196 239,206 230,200 221,206 224,196 215,190 226,190" fill="#f59e0b" opacity="0.45" transform="scale(0.7) translate(95,80)"/>
+  <polygon points="380,160 384,170 395,170 386,176 389,186 380,180 371,186 374,176 365,170 376,170" fill="#f59e0b" opacity="0.45" transform="scale(0.7) translate(165,65)"/>
+</svg>

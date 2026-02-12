@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router";
 import { ShoppingCart, Menu, X, Sparkles } from "lucide-react";
 import { useMobileMenu } from "~/hooks/useMobileMenu";
+import { useActiveSectionObserver } from "~/hooks/useActiveSectionObserver";
 import { cn } from "~/lib/utils";
 
 interface NavbarProps {
@@ -16,13 +17,16 @@ const navLinks = [
   { href: "/reservar", label: "Reservar" },
 ];
 
+const SECTION_IDS = ["hero", "paquetes", "personajes", "menu", "galeria", "contacto"];
+
 export function Navbar({ cartItemCount = 0 }: NavbarProps) {
   const { isOpen, toggle, close } = useMobileMenu();
   const location = useLocation();
   const isHome = location.pathname === "/";
+  const { activeSectionColor } = useActiveSectionObserver(SECTION_IDS);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-b border-enchant-100 shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-b border-enchant-100 shadow-sm animate-fade-in-down">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Brand */}
@@ -100,6 +104,14 @@ export function Navbar({ cartItemCount = 0 }: NavbarProps) {
             ))}
           </div>
         </div>
+      )}
+
+      {/* Section color bar */}
+      {isHome && (
+        <div
+          className="h-[3px] transition-colors duration-500"
+          style={{ backgroundColor: activeSectionColor }}
+        />
       )}
     </nav>
   );

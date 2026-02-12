@@ -22,10 +22,14 @@ export function Contact({ settings, errors, success }: ContactProps) {
   const sectionRef = useScrollAnimation();
 
   return (
-    <section id="contacto" className="py-20 bg-cream-50" ref={sectionRef}>
+    <section
+      id="contacto"
+      className="py-20 bg-gradient-to-br from-fairy-50 via-cream-50 to-magic-50"
+      ref={sectionRef}
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 scroll-hidden">
-          <h2 className="font-display text-4xl sm:text-5xl font-bold text-slate-800 mb-4">
+          <h2 className="font-display text-4xl sm:text-5xl font-bold text-slate-800 mb-4 heading-hover-gradient">
             Contacto
           </h2>
           <p className="font-body text-lg text-slate-600 max-w-2xl mx-auto">
@@ -36,7 +40,7 @@ export function Contact({ settings, errors, success }: ContactProps) {
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Info */}
-          <div className="scroll-hidden">
+          <div className="scroll-fade-left">
             <div className="space-y-6 mb-8">
               <a
                 href={`https://wa.me/${settings.whatsapp}`}
@@ -93,7 +97,7 @@ export function Contact({ settings, errors, success }: ContactProps) {
           </div>
 
           {/* Form */}
-          <div className="scroll-hidden">
+          <div className="scroll-fade-right">
             {success ? (
               <div className="magic-card p-8 text-center">
                 <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-success-50 flex items-center justify-center">

@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fffef7"/>
+      <stop offset="100%" stop-color="#fdf4ff"/>
+    </linearGradient>
+    <linearGradient id="tier1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#db2777"/>
+    </linearGradient>
+    <linearGradient id="tier2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#9333ea"/>
+    </linearGradient>
+    <linearGradient id="tier3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#14b8a6"/>
+      <stop offset="100%" stop-color="#0d9488"/>
+    </linearGradient>
+    <linearGradient id="frosting" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fffef7"/>
+      <stop offset="100%" stop-color="#fef3c7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="600" fill="url(#bg)"/>
+
+  <!-- Subtle radial glow behind cake -->
+  <circle cx="300" cy="350" r="220" fill="#f59e0b" opacity="0.06"/>
+  <circle cx="300" cy="350" r="160" fill="#ec4899" opacity="0.05"/>
+
+  <!-- Cake stand / plate -->
+  <ellipse cx="300" cy="498" rx="170" ry="18" fill="#f59e0b" opacity="0.3"/>
+  <rect x="260" y="498" width="80" height="25" rx="5" fill="#f59e0b" opacity="0.4"/>
+  <ellipse cx="300" cy="523" rx="100" ry="12" fill="#f59e0b" opacity="0.35"/>
+  <rect x="200" y="523" width="200" height="10" rx="5" fill="#f59e0b" opacity="0.45"/>
+  <ellipse cx="300" cy="533" rx="100" ry="8" fill="#d97706" opacity="0.25"/>
+
+  <!-- === TIER 1 (Bottom) === -->
+  <rect x="175" y="410" width="250" height="88" rx="16" fill="url(#tier1)" opacity="0.8"/>
+  <!-- Tier 1 frosting top -->
+  <rect x="175" y="405" width="250" height="18" rx="9" fill="url(#frosting)" opacity="0.7"/>
+  <!-- Tier 1 frosting drips -->
+  <ellipse cx="195" cy="423" rx="8" ry="14" fill="#fffef7" opacity="0.5"/>
+  <ellipse cx="225" cy="428" rx="7" ry="18" fill="#fffef7" opacity="0.45"/>
+  <ellipse cx="260" cy="425" rx="8" ry="15" fill="#fffef7" opacity="0.5"/>
+  <ellipse cx="300" cy="430" rx="9" ry="20" fill="#fffef7" opacity="0.45"/>
+  <ellipse cx="340" cy="425" rx="8" ry="15" fill="#fffef7" opacity="0.5"/>
+  <ellipse cx="375" cy="428" rx="7" ry="18" fill="#fffef7" opacity="0.45"/>
+  <ellipse cx="405" cy="423" rx="8" ry="14" fill="#fffef7" opacity="0.5"/>
+  <!-- Tier 1 decorative dots -->
+  <circle cx="210" cy="460" r="6" fill="#f59e0b" opacity="0.6"/>
+  <circle cx="250" cy="460" r="6" fill="#f59e0b" opacity="0.6"/>
+  <circle cx="290" cy="460" r="6" fill="#f59e0b" opacity="0.6"/>
+  <circle cx="330" cy="460" r="6" fill="#f59e0b" opacity="0.6"/>
+  <circle cx="370" cy="460" r="6" fill="#f59e0b" opacity="0.6"/>
+  <!-- Tier 1 bottom ribbon -->
+  <rect x="175" y="485" width="250" height="13" rx="5" fill="#db2777" opacity="0.3"/>
+
+  <!-- === TIER 2 (Middle) === -->
+  <rect x="210" y="310" width="180" height="95" rx="14" fill="url(#tier2)" opacity="0.75"/>
+  <!-- Tier 2 frosting top -->
+  <rect x="210" y="305" width="180" height="16" rx="8" fill="url(#frosting)" opacity="0.7"/>
+  <!-- Tier 2 frosting drips -->
+  <ellipse cx="228" cy="321" rx="7" ry="14" fill="#fffef7" opacity="0.5"/>
+  <ellipse cx="258" cy="326" rx="6" ry="18" fill="#fffef7" opacity="0.45"/>
+  <ellipse cx="300" cy="324" rx="8" ry="16" fill="#fffef7" opacity="0.5"/>
+  <ellipse cx="342" cy="326" rx="6" ry="18" fill="#fffef7" opacity="0.45"/>
+  <ellipse cx="372" cy="321" rx="7" ry="14" fill="#fffef7" opacity="0.5"/>
+  <!-- Tier 2 decorative swirl lines -->
+  <path d="M230,355 Q250,345 270,355 Q290,365 310,355 Q330,345 350,355 Q370,365 390,355" fill="none" stroke="#fffef7" stroke-width="2" opacity="0.35"/>
+  <path d="M230,375 Q250,365 270,375 Q290,385 310,375 Q330,365 350,375 Q370,385 390,375" fill="none" stroke="#fffef7" stroke-width="2" opacity="0.3"/>
+  <!-- Tier 2 small hearts -->
+  <path d="M253,390 Q253,385 258,385 Q263,385 263,390 Q263,395 258,400 Q253,395 253,390Z" fill="#ec4899" opacity="0.5"/>
+  <path d="M293,390 Q293,385 298,385 Q303,385 303,390 Q303,395 298,400 Q293,395 293,390Z" fill="#ec4899" opacity="0.5"/>
+  <path d="M333,390 Q333,385 338,385 Q343,385 343,390 Q343,395 338,400 Q333,395 333,390Z" fill="#ec4899" opacity="0.5"/>
+
+  <!-- === TIER 3 (Top) === -->
+  <rect x="248" y="220" width="104" height="90" rx="12" fill="url(#tier3)" opacity="0.75"/>
+  <!-- Tier 3 frosting top -->
+  <rect x="248" y="215" width="104" height="14" rx="7" fill="url(#frosting)" opacity="0.7"/>
+  <!-- Tier 3 frosting drips -->
+  <ellipse cx="265" cy="229" rx="6" ry="12" fill="#fffef7" opacity="0.5"/>
+  <ellipse cx="300" cy="232" rx="7" ry="15" fill="#fffef7" opacity="0.45"/>
+  <ellipse cx="335" cy="229" rx="6" ry="12" fill="#fffef7" opacity="0.5"/>
+  <!-- Tier 3 dots -->
+  <circle cx="275" cy="260" r="4" fill="#f59e0b" opacity="0.55"/>
+  <circle cx="300" cy="260" r="4" fill="#f59e0b" opacity="0.55"/>
+  <circle cx="325" cy="260" r="4" fill="#f59e0b" opacity="0.55"/>
+  <!-- Tier 3 decorative -->
+  <circle cx="275" cy="285" r="5" fill="#ec4899" opacity="0.45"/>
+  <circle cx="300" cy="285" r="5" fill="#ec4899" opacity="0.45"/>
+  <circle cx="325" cy="285" r="5" fill="#ec4899" opacity="0.45"/>
+
+  <!-- === CANDLES === -->
+  <!-- Candle 1 -->
+  <rect x="267" y="175" width="7" height="42" rx="3" fill="#ec4899" opacity="0.75"/>
+  <rect x="268" y="175" width="2" height="42" rx="1" fill="#db2777" opacity="0.3"/>
+  <ellipse cx="270" cy="170" rx="6" ry="9" fill="#f59e0b" opacity="0.75"/>
+  <ellipse cx="270" cy="167" rx="3" ry="5" fill="#fef3c7" opacity="0.8"/>
+
+  <!-- Candle 2 -->
+  <rect x="287" y="168" width="7" height="48" rx="3" fill="#a855f7" opacity="0.75"/>
+  <rect x="288" y="168" width="2" height="48" rx="1" fill="#7c3aed" opacity="0.3"/>
+  <ellipse cx="290" cy="163" rx="6" ry="9" fill="#f59e0b" opacity="0.75"/>
+  <ellipse cx="290" cy="160" rx="3" ry="5" fill="#fef3c7" opacity="0.8"/>
+
+  <!-- Candle 3 (center, taller) -->
+  <rect x="297" y="158" width="8" height="58" rx="3.5" fill="#14b8a6" opacity="0.75"/>
+  <rect x="298" y="158" width="2.5" height="58" rx="1" fill="#0d9488" opacity="0.3"/>
+  <ellipse cx="301" cy="152" rx="7" ry="10" fill="#f59e0b" opacity="0.8"/>
+  <ellipse cx="301" cy="148" rx="4" ry="6" fill="#fef3c7" opacity="0.85"/>
+
+  <!-- Candle 4 -->
+  <rect x="310" y="168" width="7" height="48" rx="3" fill="#f59e0b" opacity="0.75"/>
+  <rect x="311" y="168" width="2" height="48" rx="1" fill="#d97706" opacity="0.3"/>
+  <ellipse cx="313" cy="163" rx="6" ry="9" fill="#f59e0b" opacity="0.75"/>
+  <ellipse cx="313" cy="160" rx="3" ry="5" fill="#fef3c7" opacity="0.8"/>
+
+  <!-- Candle 5 -->
+  <rect x="328" y="175" width="7" height="42" rx="3" fill="#ec4899" opacity="0.75"/>
+  <rect x="329" y="175" width="2" height="42" rx="1" fill="#db2777" opacity="0.3"/>
+  <ellipse cx="331" cy="170" rx="6" ry="9" fill="#f59e0b" opacity="0.75"/>
+  <ellipse cx="331" cy="167" rx="3" ry="5" fill="#fef3c7" opacity="0.8"/>
+
+  <!-- === CAKE TOPPER === -->
+  <!-- Star topper -->
+  <line x1="301" y1="148" x2="301" y2="118" stroke="#f59e0b" stroke-width="2.5" opacity="0.7"/>
+  <polygon points="301,95 306,110 323,110 310,120 315,137 301,127 287,137 292,120 279,110 296,110" fill="#f59e0b" opacity="0.7"/>
+  <polygon points="301,100 305,112 318,112 308,119 312,132 301,124 290,132 294,119 284,112 297,112" fill="#fef3c7" opacity="0.5"/>
+
+  <!-- === SPARKLES around the cake === -->
+  <!-- Sparkle burst left -->
+  <line x1="140" y1="300" x2="125" y2="290" stroke="#f59e0b" stroke-width="2" opacity="0.4" stroke-linecap="round"/>
+  <line x1="140" y1="310" x2="120" y2="310" stroke="#f59e0b" stroke-width="2" opacity="0.4" stroke-linecap="round"/>
+  <line x1="140" y1="320" x2="125" y2="330" stroke="#f59e0b" stroke-width="2" opacity="0.4" stroke-linecap="round"/>
+  <circle cx="138" cy="310" r="3" fill="#f59e0b" opacity="0.5"/>
+
+  <!-- Sparkle burst right -->
+  <line x1="460" y1="300" x2="475" y2="290" stroke="#f59e0b" stroke-width="2" opacity="0.4" stroke-linecap="round"/>
+  <line x1="460" y1="310" x2="480" y2="310" stroke="#f59e0b" stroke-width="2" opacity="0.4" stroke-linecap="round"/>
+  <line x1="460" y1="320" x2="475" y2="330" stroke="#f59e0b" stroke-width="2" opacity="0.4" stroke-linecap="round"/>
+  <circle cx="462" cy="310" r="3" fill="#f59e0b" opacity="0.5"/>
+
+  <!-- Floating stars -->
+  <polygon points="160,180 163,190 173,190 165,196 168,206 160,200 152,206 155,196 147,190 157,190" fill="#f59e0b" opacity="0.4"/>
+  <polygon points="440,200 443,210 453,210 445,216 448,226 440,220 432,226 435,216 427,210 437,210" fill="#f59e0b" opacity="0.4"/>
+  <polygon points="130,420 132,426 138,426 133,430 135,436 130,432 125,436 127,430 122,426 128,426" fill="#f59e0b" opacity="0.35"/>
+  <polygon points="470,430 472,436 478,436 473,440 475,446 470,442 465,446 467,440 462,436 468,436" fill="#f59e0b" opacity="0.35"/>
+
+  <!-- Small hearts floating -->
+  <path d="M110,250 Q110,243 116,243 Q122,243 122,250 Q122,257 116,264 Q110,257 110,250Z" fill="#ec4899" opacity="0.35"/>
+  <path d="M475,260 Q475,253 481,253 Q487,253 487,260 Q487,267 481,274 Q475,267 475,260Z" fill="#ec4899" opacity="0.35"/>
+  <path d="M200,140 Q200,135 204,135 Q208,135 208,140 Q208,145 204,150 Q200,145 200,140Z" fill="#ec4899" opacity="0.3"/>
+  <path d="M395,150 Q395,145 399,145 Q403,145 403,150 Q403,155 399,160 Q395,155 395,150Z" fill="#ec4899" opacity="0.3"/>
+
+  <!-- Confetti around base -->
+  <circle cx="145" cy="490" r="4" fill="#ec4899" opacity="0.4"/>
+  <circle cx="180" cy="510" r="3" fill="#14b8a6" opacity="0.35"/>
+  <circle cx="420" cy="510" r="3" fill="#a855f7" opacity="0.35"/>
+  <circle cx="455" cy="490" r="4" fill="#f59e0b" opacity="0.4"/>
+  <rect x="160" y="520" width="8" height="8" rx="1" fill="#a855f7" opacity="0.3" transform="rotate(30,164,524)"/>
+  <rect x="430" y="518" width="8" height="8" rx="1" fill="#ec4899" opacity="0.3" transform="rotate(-20,434,522)"/>
+
+  <!-- Subtle sparkle dots -->
+  <circle cx="200" cy="350" r="2" fill="#fffef7" opacity="0.6"/>
+  <circle cx="400" cy="340" r="2" fill="#fffef7" opacity="0.6"/>
+  <circle cx="170" cy="280" r="2" fill="#fffef7" opacity="0.5"/>
+  <circle cx="430" cy="290" r="2" fill="#fffef7" opacity="0.5"/>
+</svg>

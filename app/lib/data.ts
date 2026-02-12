@@ -71,12 +71,12 @@ export const addons: PackageAddon[] = [
 ];
 
 export const characters: Character[] = [
-  { id: "hada-turquesa", name: "Hada Turquesa", description: "La hada madrina que hace realidad todos los deseos con su varita magica de cristales turquesa.", color: "enchant", gradient: "from-enchant-400 to-enchant-600" },
-  { id: "hada-rosa", name: "Hada Rosa", description: "Dulce y carinosa, esparce polvo de estrellas rosas por donde pasa. Le encanta bailar y cantar.", color: "fairy", gradient: "from-fairy-400 to-fairy-600" },
-  { id: "dragon-morado", name: "Dragon Morado", description: "Un dragon amigable y jugueton que sopla burbujas magicas en lugar de fuego. El mejor amigo de los ninos.", color: "magic", gradient: "from-magic-400 to-magic-600" },
-  { id: "mago-tecnologico", name: "Mago Tecnologico", description: "Combina la magia clasica con trucos increibles y efectos especiales que dejaran a todos asombrados.", color: "enchant", gradient: "from-enchant-500 to-magic-500" },
-  { id: "princesa-unicornio", name: "Princesa Unicornio", description: "Una princesa magica con un cuerno brillante que trae arcoiris y alegria a cada celebracion.", color: "fairy", gradient: "from-fairy-400 to-magic-400" },
-  { id: "natushka", name: "Natushka", description: "La perrita mas tierna y juguetona. Le encanta dar abrazos y jugar con todos los invitados.", color: "gold", gradient: "from-gold-400 to-gold-600" },
+  { id: "hada-turquesa", name: "Hada Turquesa", description: "La hada madrina que hace realidad todos los deseos con su varita magica de cristales turquesa.", color: "enchant", gradient: "from-enchant-400 to-enchant-600", image: "/images/characters/hada-turquesa.svg" },
+  { id: "hada-rosa", name: "Hada Rosa", description: "Dulce y carinosa, esparce polvo de estrellas rosas por donde pasa. Le encanta bailar y cantar.", color: "fairy", gradient: "from-fairy-400 to-fairy-600", image: "/images/characters/hada-rosa.svg" },
+  { id: "dragon-morado", name: "Dragon Morado", description: "Un dragon amigable y jugueton que sopla burbujas magicas en lugar de fuego. El mejor amigo de los ninos.", color: "magic", gradient: "from-magic-400 to-magic-600", image: "/images/characters/dragon-morado.svg" },
+  { id: "mago-tecnologico", name: "Mago Tecnologico", description: "Combina la magia clasica con trucos increibles y efectos especiales que dejaran a todos asombrados.", color: "enchant", gradient: "from-enchant-500 to-magic-500", image: "/images/characters/mago-tecnologico.svg" },
+  { id: "princesa-unicornio", name: "Princesa Unicornio", description: "Una princesa magica con un cuerno brillante que trae arcoiris y alegria a cada celebracion.", color: "fairy", gradient: "from-fairy-400 to-magic-400", image: "/images/characters/princesa-unicornio.svg" },
+  { id: "natushka", name: "Natushka", description: "La perrita mas tierna y juguetona. Le encanta dar abrazos y jugar con todos los invitados.", color: "gold", gradient: "from-gold-400 to-gold-600", image: "/images/characters/natushka.svg" },
 ];
 
 export const menuItems: MenuItem[] = [

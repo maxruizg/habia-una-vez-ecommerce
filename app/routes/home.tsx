@@ -11,6 +11,13 @@ import { MenuSection } from "~/components/home/MenuSection";
 import { Gallery } from "~/components/home/Gallery";
 import { CalendarCTA } from "~/components/home/CalendarCTA";
 import { Contact } from "~/components/home/Contact";
+import { ReadingProgressBar } from "~/components/decorative/ReadingProgressBar";
+import { SectionProgressIndicator } from "~/components/decorative/SectionProgressIndicator";
+import { FloatingDecorations } from "~/components/decorative/FloatingDecorations";
+import { MagicCanvas } from "~/components/decorative/MagicCanvas";
+import { QuickOverview } from "~/components/home/QuickOverview";
+import { QuickBookFAB } from "~/components/home/QuickBookFAB";
+import { useMagicCardGlow } from "~/hooks/useMagicCardGlow";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -58,10 +65,17 @@ export async function action({ request }: Route.ActionArgs) {
 
 export default function Home({ loaderData, actionData }: Route.ComponentProps) {
   const { packages, characters, menuItems, siteSettings, cartItemCount } = loaderData;
+  useMagicCardGlow();
 
   return (
     <>
+      <ReadingProgressBar />
       <Navbar cartItemCount={cartItemCount} />
+      <SectionProgressIndicator />
+      <FloatingDecorations />
+      <MagicCanvas />
+      <QuickOverview />
+      <QuickBookFAB />
       <main>
         <Hero />
         <Packages packages={packages} />

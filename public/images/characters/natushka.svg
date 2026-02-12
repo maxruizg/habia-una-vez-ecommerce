@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <radialGradient id="bg-gold" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="100%" stop-color="#fde68a"/>
+    </radialGradient>
+    <filter id="glow-gold">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Circular background -->
+  <circle cx="200" cy="200" r="190" fill="url(#bg-gold)" stroke="#f59e0b" stroke-width="3" opacity="0.9"/>
+
+  <!-- Paw prints in background -->
+  <g opacity="0.15" fill="#f59e0b">
+    <!-- Top left paw -->
+    <ellipse cx="75" cy="90" rx="8" ry="10"/>
+    <circle cx="63" cy="78" r="4"/>
+    <circle cx="73" cy="74" r="4"/>
+    <circle cx="83" cy="74" r="4"/>
+    <circle cx="90" cy="80" r="4"/>
+
+    <!-- Top right paw -->
+    <ellipse cx="330" cy="100" rx="7" ry="9"/>
+    <circle cx="319" cy="89" r="3.5"/>
+    <circle cx="328" cy="85" r="3.5"/>
+    <circle cx="337" cy="85" r="3.5"/>
+    <circle cx="344" cy="91" r="3.5"/>
+
+    <!-- Bottom left paw -->
+    <ellipse cx="90" cy="330" rx="6" ry="8"/>
+    <circle cx="80" cy="320" r="3"/>
+    <circle cx="88" cy="317" r="3"/>
+    <circle cx="97" cy="317" r="3"/>
+    <circle cx="103" cy="322" r="3"/>
+
+    <!-- Bottom right paw -->
+    <ellipse cx="320" cy="320" rx="6" ry="8"/>
+    <circle cx="310" cy="310" r="3"/>
+    <circle cx="318" cy="307" r="3"/>
+    <circle cx="327" cy="307" r="3"/>
+    <circle cx="333" cy="312" r="3"/>
+  </g>
+
+  <!-- Body -->
+  <ellipse cx="200" cy="300" rx="80" ry="60" fill="#f59e0b"/>
+  <!-- Belly -->
+  <ellipse cx="200" cy="310" rx="55" ry="40" fill="#fef3c7"/>
+
+  <!-- Front left paw -->
+  <ellipse cx="150" cy="345" rx="20" ry="12" fill="#f59e0b"/>
+  <ellipse cx="150" cy="347" rx="14" ry="7" fill="#fde68a"/>
+  <!-- Toe lines -->
+  <line x1="140" y1="345" x2="140" y2="350" stroke="#d97706" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+  <line x1="150" y1="346" x2="150" y2="351" stroke="#d97706" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+  <line x1="160" y1="345" x2="160" y2="350" stroke="#d97706" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+
+  <!-- Front right paw -->
+  <ellipse cx="250" cy="345" rx="20" ry="12" fill="#f59e0b"/>
+  <ellipse cx="250" cy="347" rx="14" ry="7" fill="#fde68a"/>
+  <!-- Toe lines -->
+  <line x1="240" y1="345" x2="240" y2="350" stroke="#d97706" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+  <line x1="250" y1="346" x2="250" y2="351" stroke="#d97706" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+  <line x1="260" y1="345" x2="260" y2="350" stroke="#d97706" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+
+  <!-- Collar -->
+  <path d="M155,250 Q200,260 245,250" stroke="#ec4899" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <!-- Collar tag -->
+  <circle cx="200" cy="262" r="8" fill="#f59e0b" stroke="#d97706" stroke-width="1.5"/>
+  <polygon points="200,258 203,265 197,265" fill="#fef3c7"/>
+
+  <!-- Head (large, round puppy face) -->
+  <circle cx="200" cy="175" r="72" fill="#f59e0b"/>
+
+  <!-- Face lighter area -->
+  <ellipse cx="200" cy="195" rx="45" ry="40" fill="#fef3c7"/>
+
+  <!-- Forehead spot -->
+  <ellipse cx="200" cy="140" rx="20" ry="15" fill="#d97706" opacity="0.3"/>
+
+  <!-- Left floppy ear -->
+  <path d="M135,155 Q100,140 85,180 Q80,210 100,230 Q115,220 130,195Z" fill="#d97706"/>
+  <path d="M135,160 Q108,148 95,183 Q92,208 108,222 Q118,215 130,195Z" fill="#e5a00d" opacity="0.6"/>
+
+  <!-- Right floppy ear -->
+  <path d="M265,155 Q300,140 315,180 Q320,210 300,230 Q285,220 270,195Z" fill="#d97706"/>
+  <path d="M265,160 Q292,148 305,183 Q308,208 292,222 Q282,215 270,195Z" fill="#e5a00d" opacity="0.6"/>
+
+  <!-- Eyebrows (expressive, raised) -->
+  <path d="M160,148 Q170,138 185,142" stroke="#d97706" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M240,148 Q230,138 215,142" stroke="#d97706" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- Eyes (big, round, puppy eyes) -->
+  <ellipse cx="175" cy="170" rx="18" ry="20" fill="white"/>
+  <ellipse cx="225" cy="170" rx="18" ry="20" fill="white"/>
+  <!-- Iris -->
+  <ellipse cx="178" cy="172" rx="12" ry="14" fill="#7c2d12"/>
+  <ellipse cx="222" cy="172" rx="12" ry="14" fill="#7c2d12"/>
+  <!-- Pupil -->
+  <ellipse cx="180" cy="173" rx="7" ry="8" fill="#1c1917"/>
+  <ellipse cx="220" cy="173" rx="7" ry="8" fill="#1c1917"/>
+  <!-- Eye shine (big sparkle) -->
+  <circle cx="174" cy="166" r="5.5" fill="white"/>
+  <circle cx="218" cy="166" r="5.5" fill="white"/>
+  <circle cx="182" cy="176" r="2.5" fill="white" opacity="0.5"/>
+  <circle cx="224" cy="176" r="2.5" fill="white" opacity="0.5"/>
+
+  <!-- Nose -->
+  <ellipse cx="200" cy="198" rx="14" ry="10" fill="#1c1917"/>
+  <ellipse cx="200" cy="196" rx="12" ry="8" fill="#292524"/>
+  <!-- Nose shine -->
+  <ellipse cx="196" cy="194" rx="4" ry="3" fill="#57534e" opacity="0.4"/>
+
+  <!-- Mouth line -->
+  <path d="M200,208 L200,218" stroke="#7c2d12" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Mouth curves -->
+  <path d="M200,218 Q185,228 175,222" stroke="#7c2d12" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M200,218 Q215,228 225,222" stroke="#7c2d12" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Tongue (sticking out) -->
+  <ellipse cx="210" cy="228" rx="12" ry="14" fill="#f87171"/>
+  <ellipse cx="210" cy="226" rx="10" ry="12" fill="#fca5a5"/>
+  <!-- Tongue line -->
+  <line x1="210" y1="220" x2="210" y2="235" stroke="#ef4444" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- Whisker dots -->
+  <circle cx="172" cy="203" r="2" fill="#d97706" opacity="0.4"/>
+  <circle cx="165" cy="198" r="2" fill="#d97706" opacity="0.4"/>
+  <circle cx="168" cy="210" r="2" fill="#d97706" opacity="0.4"/>
+  <circle cx="228" cy="203" r="2" fill="#d97706" opacity="0.4"/>
+  <circle cx="235" cy="198" r="2" fill="#d97706" opacity="0.4"/>
+  <circle cx="232" cy="210" r="2" fill="#d97706" opacity="0.4"/>
+
+  <!-- Tail (wagging, curved) -->
+  <path d="M275,280 Q310,260 320,230 Q325,215 315,210" stroke="#f59e0b" stroke-width="14" fill="none" stroke-linecap="round"/>
+  <path d="M315,210 Q308,205 310,215" stroke="#fde68a" stroke-width="8" fill="none" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- Wag motion lines -->
+  <g opacity="0.25" stroke="#d97706" stroke-width="1.5" stroke-linecap="round">
+    <path d="M325,205 Q335,200 340,208" fill="none"/>
+    <path d="M328,215 Q338,212 342,220" fill="none"/>
+  </g>
+
+  <!-- Small hearts floating -->
+  <g opacity="0.4" filter="url(#glow-gold)">
+    <path d="M100,100 Q100,90 110,90 Q120,90 120,100 Q120,112 110,120 Q100,112 100,100Z" fill="#ec4899" transform="scale(0.5) translate(140, 120)"/>
+    <path d="M100,100 Q100,90 110,90 Q120,90 120,100 Q120,112 110,120 Q100,112 100,100Z" fill="#ec4899" transform="scale(0.4) translate(750, 160)"/>
+    <path d="M100,100 Q100,90 110,90 Q120,90 120,100 Q120,112 110,120 Q100,112 100,100Z" fill="#ec4899" transform="scale(0.35) translate(370, 170)"/>
+  </g>
+</svg>

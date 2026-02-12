@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fffef7"/>
+      <stop offset="100%" stop-color="#fce7f3"/>
+    </linearGradient>
+    <linearGradient id="table-top" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#db2777"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="600" fill="url(#bg)"/>
+
+  <!-- Decorative back panel -->
+  <rect x="60" y="50" width="480" height="300" rx="20" fill="#a855f7" opacity="0.08"/>
+
+  <!-- Polka dots on background -->
+  <circle cx="100" cy="100" r="8" fill="#ec4899" opacity="0.1"/>
+  <circle cx="200" cy="80" r="6" fill="#14b8a6" opacity="0.1"/>
+  <circle cx="320" cy="70" r="8" fill="#f59e0b" opacity="0.1"/>
+  <circle cx="450" cy="90" r="7" fill="#a855f7" opacity="0.1"/>
+  <circle cx="520" cy="120" r="6" fill="#ec4899" opacity="0.1"/>
+  <circle cx="80" cy="180" r="7" fill="#f59e0b" opacity="0.1"/>
+  <circle cx="530" cy="200" r="8" fill="#14b8a6" opacity="0.1"/>
+
+  <!-- Table -->
+  <rect x="40" y="380" width="520" height="20" rx="6" fill="url(#table-top)" opacity="0.85"/>
+  <!-- Table cloth scallops -->
+  <circle cx="65" cy="400" r="18" fill="#ec4899" opacity="0.25"/>
+  <circle cx="100" cy="400" r="18" fill="#ec4899" opacity="0.25"/>
+  <circle cx="135" cy="400" r="18" fill="#ec4899" opacity="0.25"/>
+  <circle cx="170" cy="400" r="18" fill="#ec4899" opacity="0.25"/>
+  <circle cx="205" cy="400" r="18" fill="#ec4899" opacity="0.25"/>
+  <circle cx="240" cy="400" r="18" fill="#ec4899" opacity="0.25"/>
+  <circle cx="275" cy="400" r="18" fill="#ec4899" opacity="0.25"/>
+  <circle cx="310" cy="400" r="18" fill="#ec4899" opacity="0.25"/>
+  <circle cx="345" cy="400" r="18" fill="#ec4899" opacity="0.25"/>
+  <circle cx="380" cy="400" r="18" fill="#ec4899" opacity="0.25"/>
+  <circle cx="415" cy="400" r="18" fill="#ec4899" opacity="0.25"/>
+  <circle cx="450" cy="400" r="18" fill="#ec4899" opacity="0.25"/>
+  <circle cx="485" cy="400" r="18" fill="#ec4899" opacity="0.25"/>
+  <circle cx="520" cy="400" r="18" fill="#ec4899" opacity="0.25"/>
+  <circle cx="540" cy="400" r="18" fill="#ec4899" opacity="0.25"/>
+  <!-- Table cloth drape -->
+  <rect x="40" y="400" width="520" height="180" rx="4" fill="#ec4899" opacity="0.15"/>
+  <!-- Table legs -->
+  <rect x="80" y="400" width="14" height="180" rx="4" fill="#db2777" opacity="0.35"/>
+  <rect x="506" y="400" width="14" height="180" rx="4" fill="#db2777" opacity="0.35"/>
+
+  <!-- Tiered cake stand (center) -->
+  <!-- Stand base -->
+  <rect x="248" y="370" width="104" height="10" rx="4" fill="#f59e0b" opacity="0.7"/>
+  <rect x="275" y="360" width="50" height="14" rx="3" fill="#f59e0b" opacity="0.6"/>
+  <rect x="293" y="310" width="14" height="54" rx="4" fill="#f59e0b" opacity="0.5"/>
+  <!-- Cake tier 1 (bottom) -->
+  <rect x="255" y="280" width="90" height="35" rx="10" fill="#ec4899" opacity="0.8"/>
+  <rect x="255" y="280" width="90" height="8" rx="4" fill="#db2777" opacity="0.3"/>
+  <!-- Frosting drips -->
+  <circle cx="270" cy="315" r="5" fill="#fce7f3" opacity="0.7"/>
+  <circle cx="290" cy="317" r="4" fill="#fce7f3" opacity="0.7"/>
+  <circle cx="310" cy="316" r="5" fill="#fce7f3" opacity="0.7"/>
+  <circle cx="330" cy="314" r="4" fill="#fce7f3" opacity="0.7"/>
+  <!-- Cake tier 2 (middle) -->
+  <rect x="268" y="248" width="64" height="35" rx="8" fill="#a855f7" opacity="0.75"/>
+  <rect x="268" y="248" width="64" height="7" rx="4" fill="#7c3aed" opacity="0.3"/>
+  <!-- Frosting drips -->
+  <circle cx="280" cy="283" r="4" fill="#e9d5ff" opacity="0.7"/>
+  <circle cx="300" cy="285" r="4" fill="#e9d5ff" opacity="0.7"/>
+  <circle cx="320" cy="282" r="3" fill="#e9d5ff" opacity="0.7"/>
+  <!-- Cake tier 3 (top) -->
+  <rect x="280" y="220" width="40" height="30" rx="6" fill="#14b8a6" opacity="0.75"/>
+  <rect x="280" y="220" width="40" height="6" rx="3" fill="#0d9488" opacity="0.3"/>
+  <!-- Topper -->
+  <polygon points="300,200 306,215 294,215" fill="#f59e0b" opacity="0.9"/>
+  <circle cx="300" cy="198" r="5" fill="#f59e0b" opacity="0.85"/>
+
+  <!-- Cupcakes left group -->
+  <!-- Cupcake 1 -->
+  <polygon points="90,380 80,350 120,350 110,380" fill="#f59e0b" opacity="0.6"/>
+  <circle cx="100" cy="342" r="18" fill="#ec4899" opacity="0.7"/>
+  <circle cx="100" cy="335" r="6" fill="#fffef7" opacity="0.5"/>
+  <circle cx="100" cy="328" r="3" fill="#f59e0b" opacity="0.8"/>
+  <!-- Cupcake 2 -->
+  <polygon points="140,380 130,355 170,355 160,380" fill="#f59e0b" opacity="0.6"/>
+  <circle cx="150" cy="347" r="16" fill="#a855f7" opacity="0.7"/>
+  <circle cx="150" cy="340" r="5" fill="#fffef7" opacity="0.5"/>
+  <circle cx="150" cy="334" r="3" fill="#ec4899" opacity="0.8"/>
+  <!-- Cupcake 3 -->
+  <polygon points="190,380 182,358 218,358 210,380" fill="#f59e0b" opacity="0.6"/>
+  <circle cx="200" cy="350" r="15" fill="#14b8a6" opacity="0.7"/>
+  <circle cx="200" cy="344" r="5" fill="#fffef7" opacity="0.5"/>
+  <circle cx="200" cy="338" r="3" fill="#f59e0b" opacity="0.8"/>
+
+  <!-- Cupcakes right group -->
+  <!-- Cupcake 4 -->
+  <polygon points="400,380 392,358 428,358 420,380" fill="#f59e0b" opacity="0.6"/>
+  <circle cx="410" cy="350" r="15" fill="#a855f7" opacity="0.7"/>
+  <circle cx="410" cy="344" r="5" fill="#fffef7" opacity="0.5"/>
+  <circle cx="410" cy="338" r="3" fill="#14b8a6" opacity="0.8"/>
+  <!-- Cupcake 5 -->
+  <polygon points="445,380 437,355 473,355 465,380" fill="#f59e0b" opacity="0.6"/>
+  <circle cx="455" cy="347" r="16" fill="#ec4899" opacity="0.7"/>
+  <circle cx="455" cy="340" r="5" fill="#fffef7" opacity="0.5"/>
+  <circle cx="455" cy="334" r="3" fill="#a855f7" opacity="0.8"/>
+  <!-- Cupcake 6 -->
+  <polygon points="492,380 484,350 520,350 512,380" fill="#f59e0b" opacity="0.6"/>
+  <circle cx="502" cy="342" r="18" fill="#14b8a6" opacity="0.7"/>
+  <circle cx="502" cy="335" r="6" fill="#fffef7" opacity="0.5"/>
+  <circle cx="502" cy="328" r="3" fill="#ec4899" opacity="0.8"/>
+
+  <!-- Candy jars -->
+  <!-- Jar left -->
+  <rect x="70" y="180" width="60" height="80" rx="8" fill="#14b8a6" opacity="0.15" stroke="#14b8a6" stroke-width="2" stroke-opacity="0.3"/>
+  <rect x="78" y="170" width="44" height="14" rx="5" fill="#14b8a6" opacity="0.3"/>
+  <ellipse cx="100" cy="168" r="14" ry="6" fill="#14b8a6" opacity="0.25"/>
+  <!-- Candies inside -->
+  <circle cx="85" cy="240" r="8" fill="#ec4899" opacity="0.5"/>
+  <circle cx="105" cy="238" r="8" fill="#f59e0b" opacity="0.5"/>
+  <circle cx="95" cy="225" r="7" fill="#a855f7" opacity="0.5"/>
+  <circle cx="115" cy="242" r="7" fill="#14b8a6" opacity="0.5"/>
+  <circle cx="90" cy="210" r="7" fill="#f59e0b" opacity="0.5"/>
+  <circle cx="110" cy="215" r="6" fill="#ec4899" opacity="0.5"/>
+
+  <!-- Jar right -->
+  <rect x="470" y="190" width="55" height="70" rx="8" fill="#a855f7" opacity="0.15" stroke="#a855f7" stroke-width="2" stroke-opacity="0.3"/>
+  <rect x="477" y="182" width="41" height="12" rx="5" fill="#a855f7" opacity="0.3"/>
+  <ellipse cx="497" cy="180" r="13" ry="5" fill="#a855f7" opacity="0.25"/>
+  <!-- Candies inside -->
+  <circle cx="485" cy="245" r="7" fill="#14b8a6" opacity="0.5"/>
+  <circle cx="502" cy="243" r="7" fill="#ec4899" opacity="0.5"/>
+  <circle cx="493" cy="230" r="6" fill="#f59e0b" opacity="0.5"/>
+  <circle cx="510" cy="233" r="6" fill="#a855f7" opacity="0.5"/>
+  <circle cx="488" cy="215" r="6" fill="#ec4899" opacity="0.5"/>
+
+  <!-- Lollipops -->
+  <line x1="160" y1="260" x2="160" y2="170" stroke="#f59e0b" stroke-width="3" opacity="0.6"/>
+  <circle cx="160" cy="158" r="18" fill="#ec4899" opacity="0.6"/>
+  <path d="M150,158 Q160,148 170,158 Q160,168 150,158" fill="#fffef7" opacity="0.3"/>
+
+  <line x1="440" y1="260" x2="440" y2="175" stroke="#ec4899" stroke-width="3" opacity="0.6"/>
+  <circle cx="440" cy="163" r="16" fill="#14b8a6" opacity="0.6"/>
+  <path d="M431,163 Q440,154 449,163 Q440,172 431,163" fill="#fffef7" opacity="0.3"/>
+
+  <!-- Wrapped candies scattered -->
+  <!-- Candy 1 -->
+  <ellipse cx="230" cy="150" rx="14" ry="9" fill="#f59e0b" opacity="0.6"/>
+  <polygon points="216,150 208,142 208,158" fill="#f59e0b" opacity="0.4"/>
+  <polygon points="244,150 252,142 252,158" fill="#f59e0b" opacity="0.4"/>
+
+  <!-- Candy 2 -->
+  <ellipse cx="370" cy="140" rx="12" ry="8" fill="#ec4899" opacity="0.6"/>
+  <polygon points="358,140 351,133 351,147" fill="#ec4899" opacity="0.4"/>
+  <polygon points="382,140 389,133 389,147" fill="#ec4899" opacity="0.4"/>
+
+  <!-- Candy 3 -->
+  <ellipse cx="300" cy="120" rx="13" ry="9" fill="#a855f7" opacity="0.5"/>
+  <polygon points="287,120 280,113 280,127" fill="#a855f7" opacity="0.35"/>
+  <polygon points="313,120 320,113 320,127" fill="#a855f7" opacity="0.35"/>
+
+  <!-- Sparkle stars -->
+  <polygon points="300,80 303,90 313,90 305,96 308,106 300,100 292,106 295,96 287,90 297,90" fill="#f59e0b" opacity="0.45"/>
+  <polygon points="530,140 532,147 540,147 534,151 536,158 530,154 524,158 526,151 520,147 528,147" fill="#f59e0b" opacity="0.35"/>
+  <polygon points="70" cy="130" fill="#f59e0b" opacity="0.35"/>
+
+  <!-- Top banner -->
+  <rect x="180" y="30" width="240" height="35" rx="12" fill="#f59e0b" opacity="0.25"/>
+  <line x1="180" y1="47" x2="150" y2="47" stroke="#f59e0b" stroke-width="2" opacity="0.3"/>
+  <line x1="420" y1="47" x2="450" y2="47" stroke="#f59e0b" stroke-width="2" opacity="0.3"/>
+  <polygon points="145,40 155,47 145,54" fill="#f59e0b" opacity="0.3"/>
+  <polygon points="455,40 445,47 455,54" fill="#f59e0b" opacity="0.3"/>
+</svg>

@@ -58,19 +58,23 @@ export default function Reservar({ loaderData }: Route.ComponentProps) {
   const [selectedPackageId, setSelectedPackageId] = useState(searchParams.get("package") || "");
   const [guestCount, setGuestCount] = useState(30);
   const [selectedAddons, setSelectedAddons] = useState<{ addonId: string; quantity: number }[]>([]);
+  const [pageTurnDirection, setPageTurnDirection] = useState<"forward" | "backward">("forward");
+  const [pageTurnKey, setPageTurnKey] = useState(0);
 
   const selectedPackage = pkgs.find((p) => p.id === selectedPackageId);
 
-  function goToStep(step: number) {
+  function goToStep(step: number, direction: "forward" | "backward") {
+    setPageTurnDirection(direction);
+    setPageTurnKey((k) => k + 1);
     setSearchParams({ step: String(step) });
   }
 
   function handleNext() {
-    if (currentStep < 4) goToStep(currentStep + 1);
+    if (currentStep < 4) goToStep(currentStep + 1, "forward");
   }
 
   function handleBack() {
-    if (currentStep > 1) goToStep(currentStep - 1);
+    if (currentStep > 1) goToStep(currentStep - 1, "backward");
   }
 
   function canProceed() {
@@ -141,6 +145,9 @@ export default function Reservar({ loaderData }: Route.ComponentProps) {
     navigate("/carrito");
   }
 
+  const pageTurnClass =
+    pageTurnDirection === "forward" ? "page-turn-enter" : "page-turn-enter-reverse";
+
   return (
     <>
       <Navbar cartItemCount={cartItemCount} />
@@ -161,139 +168,141 @@ export default function Reservar({ loaderData }: Route.ComponentProps) {
         <PageContainer narrow>
           <StepIndicator steps={STEPS} currentStep={currentStep} />
 
-          {/* Step 1 - Date */}
-          {currentStep === 1 && (
-            <div className="animate-fade-in">
-              <div className="flex items-center gap-3 mb-6">
-                <CalendarDays className="w-6 h-6 text-enchant-500" />
-                <h2 className="font-heading text-2xl font-bold text-slate-800">Selecciona una fecha</h2>
-              </div>
-              <BookingCalendar
-                selectedDate={selectedDate}
-                onSelectDate={setSelectedDate}
-                blockedDates={blockedDates}
-                bookedDates={bookedDates}
-              />
-              {selectedDate && (
-                <p className="mt-4 text-center font-body text-enchant-600 font-semibold">
-                  Fecha seleccionada: {formatDate(selectedDate)}
-                </p>
-              )}
-            </div>
-          )}
-
-          {/* Step 2 - Package */}
-          {currentStep === 2 && (
-            <div className="animate-fade-in">
-              <div className="flex items-center gap-3 mb-6">
-                <Package className="w-6 h-6 text-enchant-500" />
-                <h2 className="font-heading text-2xl font-bold text-slate-800">Selecciona un paquete</h2>
-              </div>
-              <PackageSelector
-                packages={pkgs}
-                selectedId={selectedPackageId}
-                onSelect={setSelectedPackageId}
-              />
-
-              {selectedPackage && (
-                <div className="mt-6">
-                  <Input
-                    label={`Numero de invitados (${selectedPackage.minGuests}-${selectedPackage.maxGuests})`}
-                    type="number"
-                    min={selectedPackage.minGuests}
-                    max={selectedPackage.maxGuests}
-                    value={guestCount}
-                    onChange={(e) => setGuestCount(Number(e.target.value))}
-                  />
+          <div key={pageTurnKey} className={pageTurnClass}>
+            {/* Step 1 - Date */}
+            {currentStep === 1 && (
+              <div className="animate-fade-in">
+                <div className="flex items-center gap-3 mb-6">
+                  <CalendarDays className="w-6 h-6 text-enchant-500" />
+                  <h2 className="font-heading text-2xl font-bold text-slate-800">Selecciona una fecha</h2>
                 </div>
-              )}
-            </div>
-          )}
-
-          {/* Step 3 - Addons */}
-          {currentStep === 3 && (
-            <div className="animate-fade-in">
-              <div className="flex items-center gap-3 mb-6">
-                <Puzzle className="w-6 h-6 text-enchant-500" />
-                <h2 className="font-heading text-2xl font-bold text-slate-800">Extras opcionales</h2>
+                <BookingCalendar
+                  selectedDate={selectedDate}
+                  onSelectDate={setSelectedDate}
+                  blockedDates={blockedDates}
+                  bookedDates={bookedDates}
+                />
+                {selectedDate && (
+                  <p className="mt-4 text-center font-body text-enchant-600 font-semibold">
+                    Fecha seleccionada: {formatDate(selectedDate)}
+                  </p>
+                )}
               </div>
-              <AddonSelector
-                addons={addonList}
-                selectedAddons={selectedAddons}
-                onToggle={toggleAddon}
-                onQuantityChange={updateAddonQuantity}
-              />
+            )}
 
-              <div className="mt-6 p-4 bg-enchant-50 rounded-xl text-center">
-                <span className="font-heading text-sm text-slate-600">Subtotal extras: </span>
-                <span className="font-heading font-bold text-enchant-600">
-                  {formatCurrency(
-                    selectedAddons.reduce((sum, sa) => {
-                      const addon = addonList.find((a) => a.id === sa.addonId);
-                      return sum + (addon?.price || 0) * sa.quantity;
-                    }, 0)
-                  )}
-                </span>
-              </div>
-            </div>
-          )}
-
-          {/* Step 4 - Summary */}
-          {currentStep === 4 && (
-            <div className="animate-fade-in">
-              <div className="flex items-center gap-3 mb-6">
-                <ShoppingCart className="w-6 h-6 text-enchant-500" />
-                <h2 className="font-heading text-2xl font-bold text-slate-800">Resumen de tu evento</h2>
-              </div>
-
-              <div className="magic-card p-6 space-y-4">
-                <div className="flex justify-between items-center py-3 border-b border-slate-100">
-                  <span className="font-heading font-semibold text-slate-600">Fecha</span>
-                  <span className="font-body font-bold text-slate-800">{formatDate(selectedDate)}</span>
+            {/* Step 2 - Package */}
+            {currentStep === 2 && (
+              <div className="animate-fade-in">
+                <div className="flex items-center gap-3 mb-6">
+                  <Package className="w-6 h-6 text-enchant-500" />
+                  <h2 className="font-heading text-2xl font-bold text-slate-800">Selecciona un paquete</h2>
                 </div>
+                <PackageSelector
+                  packages={pkgs}
+                  selectedId={selectedPackageId}
+                  onSelect={setSelectedPackageId}
+                />
 
-                <div className="flex justify-between items-center py-3 border-b border-slate-100">
-                  <span className="font-heading font-semibold text-slate-600">Invitados</span>
-                  <span className="font-body font-bold text-slate-800">{guestCount}</span>
-                </div>
-
-                <div className="flex justify-between items-center py-3 border-b border-slate-100">
-                  <span className="font-heading font-semibold text-slate-600">Paquete</span>
-                  <div className="text-right">
-                    <p className="font-body font-bold text-slate-800">{selectedPackage?.name}</p>
-                    <p className="text-sm text-enchant-600 font-heading">{formatCurrency(selectedPackage?.price || 0)}</p>
-                  </div>
-                </div>
-
-                {selectedAddons.length > 0 && (
-                  <div className="py-3 border-b border-slate-100">
-                    <p className="font-heading font-semibold text-slate-600 mb-2">Extras</p>
-                    {selectedAddons.map((sa) => {
-                      const addon = addonList.find((a) => a.id === sa.addonId);
-                      if (!addon) return null;
-                      return (
-                        <div key={sa.addonId} className="flex justify-between items-center py-1">
-                          <span className="text-sm text-slate-700 font-body">
-                            {addon.name} {sa.quantity > 1 && `x${sa.quantity}`}
-                          </span>
-                          <span className="text-sm font-heading font-semibold text-slate-700">
-                            {formatCurrency(addon.price * sa.quantity)}
-                          </span>
-                        </div>
-                      );
-                    })}
+                {selectedPackage && (
+                  <div className="mt-6">
+                    <Input
+                      label={`Numero de invitados (${selectedPackage.minGuests}-${selectedPackage.maxGuests})`}
+                      type="number"
+                      min={selectedPackage.minGuests}
+                      max={selectedPackage.maxGuests}
+                      value={guestCount}
+                      onChange={(e) => setGuestCount(Number(e.target.value))}
+                    />
                   </div>
                 )}
+              </div>
+            )}
 
-                <div className="flex justify-between items-center pt-2">
-                  <span className="font-heading text-lg font-bold text-slate-800">Total</span>
-                  <span className="font-heading text-2xl font-bold text-enchant-600">
-                    {formatCurrency(calculateTotal())}
+            {/* Step 3 - Addons */}
+            {currentStep === 3 && (
+              <div className="animate-fade-in">
+                <div className="flex items-center gap-3 mb-6">
+                  <Puzzle className="w-6 h-6 text-enchant-500" />
+                  <h2 className="font-heading text-2xl font-bold text-slate-800">Extras opcionales</h2>
+                </div>
+                <AddonSelector
+                  addons={addonList}
+                  selectedAddons={selectedAddons}
+                  onToggle={toggleAddon}
+                  onQuantityChange={updateAddonQuantity}
+                />
+
+                <div className="mt-6 p-4 bg-enchant-50 rounded-xl text-center">
+                  <span className="font-heading text-sm text-slate-600">Subtotal extras: </span>
+                  <span className="font-heading font-bold text-enchant-600">
+                    {formatCurrency(
+                      selectedAddons.reduce((sum, sa) => {
+                        const addon = addonList.find((a) => a.id === sa.addonId);
+                        return sum + (addon?.price || 0) * sa.quantity;
+                      }, 0)
+                    )}
                   </span>
                 </div>
               </div>
-            </div>
-          )}
+            )}
+
+            {/* Step 4 - Summary */}
+            {currentStep === 4 && (
+              <div className="animate-fade-in">
+                <div className="flex items-center gap-3 mb-6">
+                  <ShoppingCart className="w-6 h-6 text-enchant-500" />
+                  <h2 className="font-heading text-2xl font-bold text-slate-800">Resumen de tu evento</h2>
+                </div>
+
+                <div className="magic-card p-6 space-y-4">
+                  <div className="flex justify-between items-center py-3 border-b border-slate-100">
+                    <span className="font-heading font-semibold text-slate-600">Fecha</span>
+                    <span className="font-body font-bold text-slate-800">{formatDate(selectedDate)}</span>
+                  </div>
+
+                  <div className="flex justify-between items-center py-3 border-b border-slate-100">
+                    <span className="font-heading font-semibold text-slate-600">Invitados</span>
+                    <span className="font-body font-bold text-slate-800">{guestCount}</span>
+                  </div>
+
+                  <div className="flex justify-between items-center py-3 border-b border-slate-100">
+                    <span className="font-heading font-semibold text-slate-600">Paquete</span>
+                    <div className="text-right">
+                      <p className="font-body font-bold text-slate-800">{selectedPackage?.name}</p>
+                      <p className="text-sm text-enchant-600 font-heading">{formatCurrency(selectedPackage?.price || 0)}</p>
+                    </div>
+                  </div>
+
+                  {selectedAddons.length > 0 && (
+                    <div className="py-3 border-b border-slate-100">
+                      <p className="font-heading font-semibold text-slate-600 mb-2">Extras</p>
+                      {selectedAddons.map((sa) => {
+                        const addon = addonList.find((a) => a.id === sa.addonId);
+                        if (!addon) return null;
+                        return (
+                          <div key={sa.addonId} className="flex justify-between items-center py-1">
+                            <span className="text-sm text-slate-700 font-body">
+                              {addon.name} {sa.quantity > 1 && `x${sa.quantity}`}
+                            </span>
+                            <span className="text-sm font-heading font-semibold text-slate-700">
+                              {formatCurrency(addon.price * sa.quantity)}
+                            </span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+
+                  <div className="flex justify-between items-center pt-2">
+                    <span className="font-heading text-lg font-bold text-slate-800">Total</span>
+                    <span className="font-heading text-2xl font-bold text-enchant-600">
+                      {formatCurrency(calculateTotal())}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
 
           {/* Navigation buttons */}
           <div className="flex justify-between mt-8">

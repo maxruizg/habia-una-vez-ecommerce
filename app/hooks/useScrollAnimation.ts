@@ -1,5 +1,21 @@
 import { useEffect, useRef } from "react";
 
+const SCROLL_CLASSES = [
+  "scroll-hidden",
+  "scroll-fade-left",
+  "scroll-fade-right",
+  "scroll-scale",
+  "scroll-rotate-in",
+  "scroll-flip-up",
+  "scroll-wave-reveal",
+];
+
+const SELECTOR = SCROLL_CLASSES.map((c) => `.${c}`).join(", ");
+
+function hasScrollClass(el: Element): boolean {
+  return SCROLL_CLASSES.some((c) => el.classList.contains(c));
+}
+
 export function useScrollAnimation<T extends HTMLElement = HTMLDivElement>() {
   const ref = useRef<T>(null);
 
@@ -11,7 +27,6 @@ export function useScrollAnimation<T extends HTMLElement = HTMLDivElement>() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.remove("scroll-hidden");
             entry.target.classList.add("scroll-visible");
             observer.unobserve(entry.target);
           }
@@ -20,10 +35,10 @@ export function useScrollAnimation<T extends HTMLElement = HTMLDivElement>() {
       { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
     );
 
-    const children = el.querySelectorAll(".scroll-hidden");
+    const children = el.querySelectorAll(SELECTOR);
     children.forEach((child) => observer.observe(child));
 
-    if (el.classList.contains("scroll-hidden")) {
+    if (hasScrollClass(el)) {
       observer.observe(el);
     }
 
