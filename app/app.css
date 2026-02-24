@@ -2,57 +2,93 @@
 
 @theme {
   /* Fonts */
-  --font-display: "Fredoka", ui-sans-serif, system-ui, sans-serif;
-  --font-heading: "Quicksand", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Poppins", ui-sans-serif, system-ui, sans-serif;
   --font-body: "Nunito", ui-sans-serif, system-ui, sans-serif;
 
-  /* Enchant - Primary/Turquoise */
-  --color-enchant-50: #f0fdfa;
-  --color-enchant-100: #ccfbf1;
-  --color-enchant-200: #99f6e4;
-  --color-enchant-300: #5eead4;
-  --color-enchant-400: #2dd4bf;
-  --color-enchant-500: #14b8a6;
-  --color-enchant-600: #0d9488;
-  --color-enchant-700: #0f766e;
-  --color-enchant-800: #115e59;
-  --color-enchant-900: #134e4a;
+  /* Enchant - Primary/Sky Blue */
+  --color-enchant-50: #f0f9ff;
+  --color-enchant-100: #dff1fc;
+  --color-enchant-200: #b8e2f7;
+  --color-enchant-300: #96d4f0;
+  --color-enchant-400: #75C2E6;
+  --color-enchant-500: #5aadda;
+  --color-enchant-600: #4392c1;
+  --color-enchant-700: #35749a;
+  --color-enchant-800: #2a5c7a;
+  --color-enchant-900: #1f4560;
 
-  /* Fairy - Accent/Pink */
-  --color-fairy-50: #fdf2f8;
-  --color-fairy-100: #fce7f3;
-  --color-fairy-200: #fbcfe8;
-  --color-fairy-300: #f9a8d4;
-  --color-fairy-400: #f472b6;
-  --color-fairy-500: #ec4899;
-  --color-fairy-600: #db2777;
-  --color-fairy-700: #be185d;
-  --color-fairy-800: #9d174d;
-  --color-fairy-900: #831843;
+  /* Fairy - Accent/Coral Pink */
+  --color-fairy-50: #fef5f5;
+  --color-fairy-100: #fde8e9;
+  --color-fairy-200: #facdd0;
+  --color-fairy-300: #f7b0b3;
+  --color-fairy-400: #F29295;
+  --color-fairy-500: #e87275;
+  --color-fairy-600: #d4555a;
+  --color-fairy-700: #b33f44;
+  --color-fairy-800: #932f34;
+  --color-fairy-900: #742328;
 
-  /* Magic - Secondary/Purple */
-  --color-magic-50: #faf5ff;
-  --color-magic-100: #f3e8ff;
-  --color-magic-200: #e9d5ff;
-  --color-magic-300: #d8b4fe;
-  --color-magic-400: #c084fc;
-  --color-magic-500: #a855f7;
-  --color-magic-600: #9333ea;
-  --color-magic-700: #7e22ce;
-  --color-magic-800: #6b21a8;
-  --color-magic-900: #581c87;
+  /* Magic - Secondary/Mauve Purple */
+  --color-magic-50: #faf5fa;
+  --color-magic-100: #f3e8f3;
+  --color-magic-200: #e4cee4;
+  --color-magic-300: #d4b2d4;
+  --color-magic-400: #C496C4;
+  --color-magic-500: #b07ab0;
+  --color-magic-600: #96639a;
+  --color-magic-700: #7a4f7d;
+  --color-magic-800: #613e63;
+  --color-magic-900: #4a2f4c;
 
-  /* Gold - Highlight */
-  --color-gold-50: #fffbeb;
-  --color-gold-100: #fef3c7;
-  --color-gold-200: #fde68a;
-  --color-gold-300: #fcd34d;
-  --color-gold-400: #fbbf24;
-  --color-gold-500: #f59e0b;
-  --color-gold-600: #d97706;
-  --color-gold-700: #b45309;
-  --color-gold-800: #92400e;
-  --color-gold-900: #78350f;
+  /* Gold - Highlight/Golden Yellow */
+  --color-gold-50: #fffef5;
+  --color-gold-100: #fffbe0;
+  --color-gold-200: #FEF0A8;
+  --color-gold-300: #FEE67A;
+  --color-gold-400: #FEDC5D;
+  --color-gold-500: #f0c83e;
+  --color-gold-600: #d4ad2a;
+  --color-gold-700: #b08e1f;
+  --color-gold-800: #8c7018;
+  --color-gold-900: #6b5512;
+
+  /* Lime - Tertiary/Lime Green */
+  --color-lime-50: #f8fbf0;
+  --color-lime-100: #effadc;
+  --color-lime-200: #ddf0b8;
+  --color-lime-300: #cce694;
+  --color-lime-400: #BED469;
+  --color-lime-500: #a4bc4e;
+  --color-lime-600: #88a038;
+  --color-lime-700: #6c802c;
+  --color-lime-800: #546422;
+  --color-lime-900: #3e4a1a;
+
+  /* Cobalt - Cool Accent/Cobalt Blue */
+  --color-cobalt-50: #f0f2fa;
+  --color-cobalt-100: #dde2f3;
+  --color-cobalt-200: #b8c2e4;
+  --color-cobalt-300: #93a1d4;
+  --color-cobalt-400: #6379BA;
+  --color-cobalt-500: #4e63a2;
+  --color-cobalt-600: #3f5089;
+  --color-cobalt-700: #323f6d;
+  --color-cobalt-800: #273155;
+  --color-cobalt-900: #1d243f;
+
+  /* Orange - Warm Accent */
+  --color-orange-50: #fef8f0;
+  --color-orange-100: #fdeeda;
+  --color-orange-200: #fbdbb5;
+  --color-orange-300: #f9c68a;
+  --color-orange-400: #F6A253;
+  --color-orange-500: #e88a38;
+  --color-orange-600: #cc722a;
+  --color-orange-700: #a65b22;
+  --color-orange-800: #83471b;
+  --color-orange-900: #633514;
 
   /* Cream - Background */
   --color-cream-50: #fffef7;
@@ -237,7 +273,7 @@
   backdrop-filter: blur(8px);
   border: 1px solid var(--color-enchant-200);
   border-radius: 1rem;
-  box-shadow: 0 4px 24px rgba(20, 184, 166, 0.08);
+  box-shadow: 0 4px 24px rgba(117, 194, 230, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
 }
@@ -249,7 +285,7 @@
   border-radius: inherit;
   background: radial-gradient(
     400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba(20, 184, 166, 0.08),
+    rgba(117, 194, 230, 0.08),
     transparent 60%
   );
   opacity: 0;
@@ -269,16 +305,16 @@
 
 .magic-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(20, 184, 166, 0.15);
+  box-shadow: 0 8px 32px rgba(117, 194, 230, 0.15);
 }
 
 /* Gradient mesh background */
 .gradient-mesh-bg {
   background:
-    radial-gradient(ellipse at 20% 50%, rgba(20, 184, 166, 0.4) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(168, 85, 247, 0.35) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 80%, rgba(236, 72, 153, 0.3) 0%, transparent 50%),
-    radial-gradient(ellipse at 70% 60%, rgba(245, 158, 11, 0.15) 0%, transparent 40%);
+    radial-gradient(ellipse at 20% 50%, rgba(117, 194, 230, 0.4) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(196, 150, 196, 0.35) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(242, 146, 149, 0.3) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 60%, rgba(254, 220, 93, 0.15) 0%, transparent 40%);
   background-size: 200% 200%;
   animation: gradient-mesh 15s ease infinite;
 }

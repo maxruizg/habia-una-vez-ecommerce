@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { Sparkles, Phone, Mail, MapPin, Instagram } from "lucide-react";
+import { Phone, Mail, MapPin, Instagram } from "lucide-react";
 import { StorybookDivider } from "~/components/decorative/StorybookDivider";
 
 interface SiteSettings {
@@ -41,10 +41,11 @@ export function Footer({ settings }: FooterProps) {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Sparkles className="w-6 h-6 text-enchant-400" />
-              <span className="font-display text-xl font-bold text-white">
-                Habia una vez
-              </span>
+              <img
+                src="/images/logo.png"
+                alt="Había una vez"
+                className="h-10 w-auto brightness-0 invert"
+              />
             </div>
             <p className="text-slate-400 text-sm font-body mb-2">
               {s.subtitle}

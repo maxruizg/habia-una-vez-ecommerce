@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router";
-import { ShoppingCart, Menu, X, Sparkles } from "lucide-react";
+import { ShoppingCart, Menu, X } from "lucide-react";
 import { useMobileMenu } from "~/hooks/useMobileMenu";
 import { useActiveSectionObserver } from "~/hooks/useActiveSectionObserver";
 import { cn } from "~/lib/utils";
@@ -35,10 +35,11 @@ export function Navbar({ cartItemCount = 0 }: NavbarProps) {
             className="flex items-center gap-2 group"
             onClick={close}
           >
-            <Sparkles className="w-6 h-6 text-enchant-500 group-hover:animate-wand-wave" />
-            <span className="font-display text-xl font-bold bg-gradient-to-r from-enchant-600 to-magic-600 bg-clip-text text-transparent">
-              Habia una vez
-            </span>
+            <img
+              src="/images/logo.png"
+              alt="Había una vez"
+              className="h-10 w-auto group-hover:scale-105 transition-transform duration-300"
+            />
           </Link>
 
           {/* Desktop links */}

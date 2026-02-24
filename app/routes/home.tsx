@@ -83,11 +83,7 @@ export default function Home({ loaderData, actionData }: Route.ComponentProps) {
         <MenuSection menuItems={menuItems} />
         <Gallery />
         <CalendarCTA />
-        <Contact
-          settings={siteSettings}
-          errors={actionData?.errors}
-          success={actionData?.success}
-        />
+        <Contact settings={siteSettings} />
       </main>
       <Footer settings={siteSettings} />
     </>

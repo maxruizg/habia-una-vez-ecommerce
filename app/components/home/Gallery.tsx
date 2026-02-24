@@ -3,12 +3,12 @@ import { StorybookDivider } from "~/components/decorative/StorybookDivider";
 import { WaveDivider } from "~/components/decorative/WaveDivider";
 
 const galleryImages = [
-  { id: 1, label: "Salon decorado", image: "/images/gallery/salon.svg", gradient: "from-enchant-300 to-enchant-500" },
-  { id: 2, label: "Personajes en accion", image: "/images/gallery/personajes.svg", gradient: "from-fairy-300 to-fairy-500" },
-  { id: 3, label: "Mesa de dulces", image: "/images/gallery/mesa-dulces.svg", gradient: "from-magic-300 to-magic-500" },
-  { id: 4, label: "Ninos divirtiendose", image: "/images/gallery/ninos.svg", gradient: "from-gold-300 to-gold-500" },
-  { id: 5, label: "Decoracion tematica", image: "/images/gallery/decoracion.svg", gradient: "from-enchant-400 to-fairy-400" },
-  { id: 6, label: "Pastel personalizado", image: "/images/gallery/pastel.svg", gradient: "from-fairy-400 to-magic-400" },
+  { id: 1, label: "Aventura en equipo", image: "/images/gallery/grupal-1.png", gradient: "from-enchant-300 to-cobalt-400" },
+  { id: 2, label: "Amigos magicos", image: "/images/gallery/grupal-2.png", gradient: "from-fairy-300 to-fairy-500" },
+  { id: 3, label: "Diversion sin fin", image: "/images/gallery/grupal-3.png", gradient: "from-magic-300 to-magic-500" },
+  { id: 4, label: "Momentos especiales", image: "/images/gallery/grupal-4.png", gradient: "from-lime-300 to-lime-500" },
+  { id: 5, label: "Mundo de fantasia", image: "/images/gallery/grupal-5.png", gradient: "from-orange-300 to-orange-500" },
+  { id: 6, label: "Todos juntos", image: "/images/gallery/grupal-6.png", gradient: "from-cobalt-300 to-enchant-400" },
 ];
 
 export function Gallery() {

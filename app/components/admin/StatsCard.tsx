@@ -5,7 +5,7 @@ interface StatsCardProps {
   title: string;
   value: string | number;
   icon: LucideIcon;
-  color?: "enchant" | "fairy" | "magic" | "gold";
+  color?: "enchant" | "fairy" | "magic" | "gold" | "lime" | "cobalt" | "orange";
   subtitle?: string;
 }
 
@@ -14,6 +14,9 @@ const colorClasses = {
   fairy: "bg-fairy-100 text-fairy-600",
   magic: "bg-magic-100 text-magic-600",
   gold: "bg-gold-100 text-gold-600",
+  lime: "bg-lime-100 text-lime-600",
+  cobalt: "bg-cobalt-100 text-cobalt-600",
+  orange: "bg-orange-100 text-orange-600",
 };
 
 export function StatsCard({ title, value, icon: Icon, color = "enchant", subtitle }: StatsCardProps) {

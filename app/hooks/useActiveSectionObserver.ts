@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 
 const SECTION_COLORS: Record<string, string> = {
-  hero: "#14b8a6",
-  paquetes: "#ec4899",
-  personajes: "#a855f7",
-  menu: "#14b8a6",
-  galeria: "#f59e0b",
-  calendario: "#a855f7",
-  contacto: "#ec4899",
+  hero: "#75C2E6",
+  paquetes: "#F29295",
+  personajes: "#C496C4",
+  menu: "#75C2E6",
+  galeria: "#FEDC5D",
+  calendario: "#C496C4",
+  contacto: "#F29295",
 };
 
 export function useActiveSectionObserver(sectionIds: string[]) {
@@ -40,7 +40,7 @@ export function useActiveSectionObserver(sectionIds: string[]) {
     };
   }, [sectionIds]);
 
-  const activeSectionColor = SECTION_COLORS[activeSectionId] || "#14b8a6";
+  const activeSectionColor = SECTION_COLORS[activeSectionId] || "#75C2E6";
 
   return { activeSectionId, activeSectionColor };
 }

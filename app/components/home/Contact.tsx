@@ -1,5 +1,5 @@
-import { Form } from "react-router";
-import { Phone, Mail, MapPin, Send } from "lucide-react";
+import { useState } from "react";
+import { Phone, MapPin, MessageCircle } from "lucide-react";
 import { useScrollAnimation } from "~/hooks/useScrollAnimation";
 import { StorybookDivider } from "~/components/decorative/StorybookDivider";
 import { Input } from "~/components/ui/Input";
@@ -14,12 +14,22 @@ interface ContactProps {
     address: string;
     mapUrl: string;
   };
-  errors?: Record<string, string>;
-  success?: boolean;
 }
 
-export function Contact({ settings, errors, success }: ContactProps) {
+export function Contact({ settings }: ContactProps) {
   const sectionRef = useScrollAnimation();
+  const [name, setName] = useState("");
+  const [message, setMessage] = useState("");
+
+  function handleWhatsApp(e: React.FormEvent) {
+    e.preventDefault();
+    const lines = [];
+    if (name) lines.push(`Hola, soy *${name}*.`);
+    if (message) lines.push(message);
+    if (!lines.length) lines.push("Hola, me gustaria obtener mas informacion sobre sus eventos.");
+    const text = encodeURIComponent(lines.join("\n"));
+    window.open(`https://wa.me/${settings.whatsapp}?text=${text}`, "_blank");
+  }
 
   return (
     <section
@@ -58,15 +68,17 @@ export function Contact({ settings, errors, success }: ContactProps) {
               </a>
 
               <a
-                href={`mailto:${settings.email}`}
+                href={`https://wa.me/${settings.whatsapp}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 magic-card hover:border-enchant-400"
               >
                 <div className="w-12 h-12 rounded-xl bg-fairy-100 flex items-center justify-center">
-                  <Mail className="w-6 h-6 text-fairy-600" />
+                  <MessageCircle className="w-6 h-6 text-fairy-600" />
                 </div>
                 <div>
-                  <p className="font-heading font-semibold text-slate-800">Email</p>
-                  <p className="text-slate-600 text-sm">{settings.email}</p>
+                  <p className="font-heading font-semibold text-slate-800">Escribenos</p>
+                  <p className="text-slate-600 text-sm">Enviar mensaje por WhatsApp</p>
                 </div>
               </a>
 
@@ -96,58 +108,28 @@ export function Contact({ settings, errors, success }: ContactProps) {
             </div>
           </div>
 
-          {/* Form */}
+          {/* WhatsApp form */}
           <div className="scroll-fade-right">
-            {success ? (
-              <div className="magic-card p-8 text-center">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-success-50 flex items-center justify-center">
-                  <Send className="w-8 h-8 text-success-600" />
-                </div>
-                <h3 className="font-heading text-xl font-bold text-slate-800 mb-2">
-                  Mensaje enviado
-                </h3>
-                <p className="text-slate-600 font-body">
-                  Nos pondremos en contacto contigo pronto.
-                </p>
-              </div>
-            ) : (
-              <Form method="post" className="magic-card p-8 space-y-5">
-                <input type="hidden" name="intent" value="contact" />
-                <Input
-                  label="Nombre"
-                  name="name"
-                  placeholder="Tu nombre completo"
-                  error={errors?.name}
-                  required
-                />
-                <Input
-                  label="Email"
-                  name="email"
-                  type="email"
-                  placeholder="tu@email.com"
-                  error={errors?.email}
-                  required
-                />
-                <Input
-                  label="Telefono (opcional)"
-                  name="phone"
-                  type="tel"
-                  placeholder="55 1234 5678"
-                  error={errors?.phone}
-                />
-                <Textarea
-                  label="Mensaje"
-                  name="message"
-                  placeholder="Cuentanos sobre tu evento..."
-                  error={errors?.message}
-                  required
-                />
-                <Button type="submit" className="w-full">
-                  <Send className="w-4 h-4" />
-                  Enviar mensaje
-                </Button>
-              </Form>
-            )}
+            <form onSubmit={handleWhatsApp} className="magic-card p-8 space-y-5">
+              <Input
+                label="Nombre"
+                name="name"
+                placeholder="Tu nombre completo"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+              <Textarea
+                label="Mensaje"
+                name="message"
+                placeholder="Cuentanos sobre tu evento..."
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+              />
+              <Button type="submit" className="w-full">
+                <MessageCircle className="w-4 h-4" />
+                Enviar por WhatsApp
+              </Button>
+            </form>
           </div>
         </div>
       </div>

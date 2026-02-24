@@ -3,10 +3,13 @@ import { useReducedMotion } from "~/hooks/useReducedMotion";
 
 // --- Theme colors (RGB) matching site palette ---
 const THEME_COLORS = [
-  [20, 184, 166],   // enchant-500
-  [236, 72, 153],   // fairy-500
-  [168, 85, 247],   // magic-500
-  [245, 158, 11],   // gold-500
+  [117, 194, 230],  // enchant-400 sky blue
+  [242, 146, 149],  // fairy-400 coral pink
+  [196, 150, 196],  // magic-400 mauve
+  [254, 220, 93],   // gold-400 golden yellow
+  [190, 212, 105],  // lime-400 lime green
+  [99, 121, 186],   // cobalt-400 cobalt blue
+  [246, 162, 83],   // orange-400 warm orange
 ] as const;
 
 // --- Sparkle trail config ---

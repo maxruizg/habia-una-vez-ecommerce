@@ -35,7 +35,7 @@ export function Characters({ characters }: CharactersProps) {
                 className="scroll-scale magic-card p-6 text-center group"
                 style={{ "--stagger": index } as React.CSSProperties}
               >
-                <div className={`w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br ${character.gradient} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 overflow-hidden`}>
+                <div className={`w-28 h-28 mx-auto mb-4 rounded-full bg-gradient-to-br ${character.gradient} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 overflow-hidden`}>
                   {character.image ? (
                     <img
                       src={character.image}
