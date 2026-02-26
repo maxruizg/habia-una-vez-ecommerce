@@ -40,7 +40,7 @@ export function Characters({ characters }: CharactersProps) {
                     <img
                       src={character.image}
                       alt={character.name}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain p-1"
                     />
                   ) : (
                     <span className="text-3xl text-white font-display font-bold">
