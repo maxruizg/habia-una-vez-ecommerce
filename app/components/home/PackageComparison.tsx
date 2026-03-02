@@ -19,7 +19,7 @@ const featureLabels = [
   "Personaje mascota",
   "Pinata tematica",
   "Regalo para festejado",
-  "Barra de snacks premium",
+  "Barra de snacks",
   "Sesion de fotos",
   "Show de magia",
   "Area de inflables",

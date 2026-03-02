@@ -18,11 +18,12 @@ interface AddonSelectorProps {
 const categoryLabels: Record<string, string> = {
   personajes: "Personajes",
   comida: "Comida",
-  decoracion: "Decoracion",
+  decoracion: "Decoración",
   entretenimiento: "Entretenimiento",
+  manualidades: "Manualidades",
 };
 
-const categoryOrder = ["personajes", "comida", "decoracion", "entretenimiento"];
+const categoryOrder = ["decoracion", "comida", "entretenimiento", "manualidades"];
 
 export function AddonSelector({
   addons,

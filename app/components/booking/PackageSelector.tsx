@@ -36,7 +36,7 @@ export function PackageSelector({ packages, selectedId, onSelect }: PackageSelec
             {pkg.isPremium && (
               <div className="flex items-center gap-1 text-gold-600 mb-2">
                 <Crown className="w-4 h-4" />
-                <span className="text-xs font-heading font-bold uppercase tracking-wide">Premium</span>
+                <span className="text-xs font-heading font-bold uppercase tracking-wide">Recomendado</span>
               </div>
             )}
 

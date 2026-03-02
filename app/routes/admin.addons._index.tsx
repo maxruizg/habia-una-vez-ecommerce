@@ -14,8 +14,9 @@ export async function loader({}: Route.LoaderArgs) {
 const categoryLabels: Record<string, string> = {
   personajes: "Personajes",
   comida: "Comida",
-  decoracion: "Decoracion",
+  decoracion: "Decoración",
   entretenimiento: "Entretenimiento",
+  manualidades: "Manualidades",
 };
 
 const categoryColors: Record<string, "enchant" | "fairy" | "magic" | "gold"> = {
@@ -23,6 +24,7 @@ const categoryColors: Record<string, "enchant" | "fairy" | "magic" | "gold"> = {
   comida: "gold",
   decoracion: "fairy",
   entretenimiento: "enchant",
+  manualidades: "magic",
 };
 
 export default function AdminAddons({ loaderData }: Route.ComponentProps) {

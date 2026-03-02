@@ -15,7 +15,7 @@ export interface EventPackage {
 export interface PackageAddon {
   id: string;
   name: string;
-  category: "personajes" | "comida" | "decoracion" | "entretenimiento";
+  category: "personajes" | "comida" | "decoracion" | "entretenimiento" | "manualidades";
   description: string;
   price: number;
   image?: string;
@@ -34,7 +34,7 @@ export interface Character {
 export interface MenuItem {
   id: string;
   name: string;
-  category: "bebidas" | "botanas" | "panaderia" | "pollo" | "res" | "cerdo" | "tacos" | "infantil";
+  category: "aguas" | "guisados" | "guarniciones" | "menu-ninos" | "snacks";
   description?: string;
   price?: number;
 }

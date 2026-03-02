@@ -3,7 +3,7 @@ import { useScrollAnimation } from "~/hooks/useScrollAnimation";
 import { StorybookDivider } from "~/components/decorative/StorybookDivider";
 import { WaveDivider } from "~/components/decorative/WaveDivider";
 import { cn } from "~/lib/utils";
-import { UtensilsCrossed, Coffee, Cookie, Drumstick, Beef, Ham, Flame, Baby, ChevronDown } from "lucide-react";
+import { GlassWater, Flame, UtensilsCrossed, Baby, Cookie, ChevronDown } from "lucide-react";
 import type { MenuItem } from "~/lib/types";
 
 interface MenuSectionProps {
@@ -11,18 +11,20 @@ interface MenuSectionProps {
 }
 
 const categories = [
-  { id: "bebidas", label: "Bebidas", icon: Coffee },
-  { id: "botanas", label: "Botanas", icon: UtensilsCrossed },
-  { id: "panaderia", label: "Panaderia", icon: Cookie },
-  { id: "pollo", label: "Pollo", icon: Drumstick },
-  { id: "res", label: "Res", icon: Beef },
-  { id: "cerdo", label: "Cerdo", icon: Ham },
-  { id: "tacos", label: "Tacos", icon: Flame },
-  { id: "infantil", label: "Infantil", icon: Baby },
+  { id: "aguas", label: "Aguas", icon: GlassWater },
+  { id: "guisados", label: "Guisados", icon: Flame },
+  { id: "guarniciones", label: "Guarniciones", icon: UtensilsCrossed },
+  { id: "menu-ninos", label: "Menú Niños", icon: Baby },
+  { id: "snacks", label: "Snacks", icon: Cookie },
 ] as const;
 
+const categoryNotes: Record<string, string> = {
+  "menu-ninos": "A escoger 2 opciones principales y 1 acompañamiento",
+  "snacks": "Escoge tus 18 opciones favoritas",
+};
+
 export function MenuSection({ menuItems }: MenuSectionProps) {
-  const [activeCategory, setActiveCategory] = useState<string>("bebidas");
+  const [activeCategory, setActiveCategory] = useState<string>("aguas");
   const [expandedDesktop, setExpandedDesktop] = useState<string | null>(null);
   const sectionRef = useScrollAnimation();
 
@@ -74,6 +76,12 @@ export function MenuSection({ menuItems }: MenuSectionProps) {
                 );
               })}
             </div>
+
+            {categoryNotes[activeCategory] && (
+              <p className="text-sm text-enchant-600 font-heading font-semibold text-center mb-4">
+                {categoryNotes[activeCategory]}
+              </p>
+            )}
 
             <div className="grid sm:grid-cols-2 gap-3">
               {filteredItems.map((item) => (
@@ -130,6 +138,11 @@ export function MenuSection({ menuItems }: MenuSectionProps) {
                   >
                     <div className="overflow-hidden">
                       <div className="pt-2 space-y-1.5">
+                        {categoryNotes[cat.id] && (
+                          <p className="text-xs text-enchant-600 font-heading font-semibold px-4 py-1">
+                            {categoryNotes[cat.id]}
+                          </p>
+                        )}
                         {items.map((item) => (
                           <div
                             key={item.id}

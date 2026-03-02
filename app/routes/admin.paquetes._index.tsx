@@ -29,7 +29,7 @@ export default function AdminPaquetes({ loaderData }: Route.ComponentProps) {
                 <h3 className="font-heading text-lg font-bold text-slate-800">{pkg.name}</h3>
               </div>
               <Badge variant={pkg.isPremium ? "gold" : "enchant"}>
-                {pkg.isPremium ? "Premium" : "Base"}
+                {pkg.isPremium ? "Recomendado" : "Base"}
               </Badge>
             </div>
 
