@@ -1,11 +1,10 @@
 import { redirect } from "react-router";
-import bcrypt from "bcryptjs";
 import { getSession, commitSession, destroySession } from "./session.server";
 
 const ADMIN_SESSION_KEY = "adminUserId";
 
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL || "admin@habiaunavez.com";
-const ADMIN_PASSWORD_HASH = process.env.ADMIN_PASSWORD_HASH || "";
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "";
 
 export async function getAdminId(request: Request): Promise<string | undefined> {
   const session = await getSession(request);
@@ -28,10 +27,8 @@ export async function requireAdmin(request: Request) {
 
 export async function login(email: string, password: string) {
   if (email !== ADMIN_EMAIL) return null;
-  if (!ADMIN_PASSWORD_HASH) return null;
-
-  const isValid = await bcrypt.compare(password, ADMIN_PASSWORD_HASH);
-  if (!isValid) return null;
+  if (!ADMIN_PASSWORD) return null;
+  if (password !== ADMIN_PASSWORD) return null;
 
   return { id: "admin-1", email: ADMIN_EMAIL, name: "Admin" };
 }

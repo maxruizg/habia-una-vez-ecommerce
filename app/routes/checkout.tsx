@@ -41,7 +41,7 @@ export async function action({ request }: Route.ActionArgs) {
   const bookingNumber = generateBookingNumber();
   const packageItem = cart.items.find((i) => i.type === "package");
 
-  createBooking({
+  await createBooking({
     bookingNumber,
     customerName: result.data.name,
     customerEmail: result.data.email,
@@ -49,6 +49,12 @@ export async function action({ request }: Route.ActionArgs) {
     packageId: packageItem?.itemId || "",
     eventDate: cart.eventDate || "",
     guestCount: cart.guestCount || 0,
+    childCount: cart.childCount,
+    adultCount: cart.adultCount,
+    guestTier: cart.guestTier,
+    dayType: cart.dayType,
+    selectedAdultMenu: cart.selectedAdultMenu,
+    selectedKidsMenu: cart.selectedKidsMenu,
     addons: cart.items
       .filter((i) => i.type === "addon")
       .map((i) => ({ addonId: i.itemId, quantity: i.quantity })),

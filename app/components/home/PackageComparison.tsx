@@ -1,5 +1,5 @@
 import { Check, Minus } from "lucide-react";
-import { formatCurrency } from "~/lib/utils";
+import { formatCurrency, getMinPrice } from "~/lib/utils";
 import type { EventPackage } from "~/lib/types";
 
 interface PackageComparisonProps {
@@ -7,25 +7,23 @@ interface PackageComparisonProps {
 }
 
 const featureLabels = [
-  "Salon de eventos",
-  "Personal de servicio",
-  "Invitaciones electronicas",
-  "Pastel decorado tematico",
-  "Mesa de botanas",
-  "Bebidas ilimitadas",
-  "Pintacaritas profesional",
-  "Decoracion del salon",
-  "Musica y sonido",
-  "Personaje mascota",
-  "Pinata tematica",
-  "Regalo para festejado",
-  "Barra de snacks",
-  "Sesion de fotos",
-  "Show de magia",
-  "Area de inflables",
+  "Renta del Salon (5 hrs)",
+  "Staff de Apoyo",
+  "Carrito de Botanas o Ensaladas",
+  "Mobiliario y Equipo",
+  "Pinata Tematica con Dulces",
+  "Coordinador de Evento",
+  "Pastel Decorado",
+  "Bebidas",
+  "Meseros",
+  "Invitacion Electronica",
+  "Regalo para el Festejado",
+  "Pinta Caritas",
+  "Seleccion de Menu",
 ];
 
-const baseFeatureCount = 9;
+// Experiencia Magica only has the first 2 features
+const basicFeatureCount = 2;
 
 export function PackageComparison({ packages }: PackageComparisonProps) {
   const basic = packages.find((p) => !p.isPremium);
@@ -53,10 +51,12 @@ export function PackageComparison({ packages }: PackageComparisonProps) {
           <tr className="border-t border-slate-100">
             <td className="py-3 px-4 font-body text-slate-600">Precio</td>
             <td className="py-3 px-4 text-center font-heading font-bold text-enchant-600">
-              {formatCurrency(basic.price)}
+              <span className="text-xs text-slate-400 font-normal block">desde</span>
+              {formatCurrency(getMinPrice(basic.pricingTiers))}
             </td>
             <td className="py-3 px-4 text-center font-heading font-bold text-gold-600 bg-gold-50">
-              {formatCurrency(premium.price)}
+              <span className="text-xs text-slate-400 font-normal block">desde</span>
+              {formatCurrency(getMinPrice(premium.pricingTiers))}
             </td>
           </tr>
           <tr className="border-t border-slate-100">
@@ -71,14 +71,14 @@ export function PackageComparison({ packages }: PackageComparisonProps) {
           <tr className="border-t border-slate-100">
             <td className="py-3 px-4 font-body text-slate-600">Invitados</td>
             <td className="py-3 px-4 text-center font-body text-slate-700">
-              {basic.minGuests}-{basic.maxGuests}
+              50-125
             </td>
             <td className="py-3 px-4 text-center font-body text-slate-700 bg-gold-50">
-              {premium.minGuests}-{premium.maxGuests}
+              50-125
             </td>
           </tr>
           {featureLabels.map((label, i) => {
-            const basicHas = i < baseFeatureCount;
+            const basicHas = i < basicFeatureCount;
             const premiumHas = true;
             return (
               <tr key={label} className="border-t border-slate-100">

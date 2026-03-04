@@ -13,6 +13,30 @@ export async function action({ request }: Route.ActionArgs) {
       const guestCount = formData.get("guestCount")
         ? Number(formData.get("guestCount"))
         : undefined;
+      const childCount = formData.get("childCount")
+        ? Number(formData.get("childCount"))
+        : undefined;
+      const adultCount = formData.get("adultCount")
+        ? Number(formData.get("adultCount"))
+        : undefined;
+      const guestTier = formData.get("guestTier")
+        ? (Number(formData.get("guestTier")) as import("~/lib/types").GuestTier)
+        : undefined;
+      const dayType = formData.get("dayType")
+        ? (formData.get("dayType") as import("~/lib/types").DayType)
+        : undefined;
+
+      let selectedAdultMenu: string[] | undefined;
+      try {
+        const raw = formData.get("selectedAdultMenu");
+        if (raw) selectedAdultMenu = JSON.parse(raw as string);
+      } catch { /* ignore */ }
+
+      let selectedKidsMenu: string[] | undefined;
+      try {
+        const raw = formData.get("selectedKidsMenu");
+        if (raw) selectedKidsMenu = JSON.parse(raw as string);
+      } catch { /* ignore */ }
 
       let items: CartItem[];
       try {
@@ -24,7 +48,10 @@ export async function action({ request }: Route.ActionArgs) {
         });
       }
 
-      const cookie = await setCartItems(request, items, eventDate || undefined, guestCount);
+      const cookie = await setCartItems(
+        request, items, eventDate || undefined, guestCount, childCount, adultCount,
+        guestTier, dayType, selectedAdultMenu, selectedKidsMenu
+      );
       return new Response(JSON.stringify({ success: true }), {
         headers: {
           "Content-Type": "application/json",

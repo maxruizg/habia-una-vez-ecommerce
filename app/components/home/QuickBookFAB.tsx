@@ -20,10 +20,10 @@ export function QuickBookFAB() {
       {expanded ? (
         <div className="bg-white rounded-2xl shadow-2xl border border-enchant-200 p-4 w-56 animate-scale-in">
           <p className="font-heading text-sm font-semibold text-slate-700 mb-1">
-            Desde $8,500 MXN
+            Desde $35,000 MXN
           </p>
           <p className="text-xs text-slate-500 mb-3 font-body">
-            Paquetes todo incluido
+            Salon y paquetes todo incluido
           </p>
           <a
             href="/reservar"

@@ -22,7 +22,7 @@ const links = [
 
 export function AdminSidebar() {
   return (
-    <aside className="w-64 bg-slate-900 text-white min-h-screen flex flex-col">
+    <aside className="w-64 bg-slate-900 text-white h-screen sticky top-0 flex flex-col">
       {/* Brand */}
       <div className="px-6 py-5 border-b border-slate-800">
         <div className="flex items-center gap-2">
@@ -33,7 +33,7 @@ export function AdminSidebar() {
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 px-3 py-4 space-y-1">
+      <nav className="flex-1 overflow-y-auto px-3 py-4 space-y-1">
         {links.map((link) => (
           <NavLink
             key={link.to}

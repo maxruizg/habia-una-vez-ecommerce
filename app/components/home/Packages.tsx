@@ -7,6 +7,7 @@ import { StorybookDivider } from "~/components/decorative/StorybookDivider";
 import { AnimatedCounter } from "~/components/decorative/AnimatedCounter";
 import { WaveDivider } from "~/components/decorative/WaveDivider";
 import { PackageComparison } from "~/components/home/PackageComparison";
+import { getMinPrice } from "~/lib/utils";
 import type { EventPackage } from "~/lib/types";
 
 interface PackagesProps {
@@ -35,21 +36,24 @@ export function Packages({ packages }: PackagesProps) {
             <StorybookDivider className="max-w-xs mx-auto mt-6" />
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto items-start pt-5">
             {packages.map((pkg, index) => (
               <div
                 key={pkg.id}
-                className={`${index % 2 === 0 ? "scroll-fade-left" : "scroll-fade-right"} magic-card p-8 ${
-                  pkg.isPremium ? "border-2 border-gold-400 ring-2 ring-gold-200" : ""
-                }`}
+                className={`${index % 2 === 0 ? "scroll-fade-left" : "scroll-fade-right"}`}
                 style={{ "--stagger": index } as React.CSSProperties}
               >
-                {pkg.isPremium && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-gold-400 to-gold-600 text-white px-4 py-1.5 rounded-full text-sm font-heading font-bold flex items-center gap-1.5 shadow-lg z-10">
-                    <Crown className="w-4 h-4" />
-                    Recomendado
+                {pkg.isPremium ? (
+                  <div className="flex justify-center -mb-4 relative z-20">
+                    <div className="bg-gradient-to-r from-gold-400 to-gold-600 text-white px-5 py-1.5 rounded-full text-sm font-heading font-bold flex items-center gap-1.5 shadow-lg">
+                      <Crown className="w-4 h-4" />
+                      Recomendado
+                    </div>
                   </div>
+                ) : (
+                  <div className="h-4" />
                 )}
+                <div className={`magic-card ${pkg.isPremium ? "p-8 pt-6 border-2 border-gold-400 ring-2 ring-gold-200" : "p-8"}`}>
 
                 <div className="text-center mb-6">
                   <div className="inline-flex items-center gap-2 mb-3">
@@ -61,15 +65,16 @@ export function Packages({ packages }: PackagesProps) {
                   <p className="text-slate-600 font-body text-sm mb-4">
                     {pkg.description}
                   </p>
-                  <div className="flex items-baseline justify-center gap-1">
+                  <div className="flex items-baseline justify-center gap-2">
+                    <span className="text-sm text-slate-500 font-body">desde</span>
                     <AnimatedCounter
-                      value={pkg.price}
+                      value={getMinPrice(pkg.pricingTiers)}
                       format="currency"
                       className={`text-4xl font-heading font-bold ${pkg.isPremium ? "text-gold-600" : "text-enchant-600"}`}
                     />
                   </div>
                   <p className="text-slate-500 text-sm mt-1">
-                    {pkg.duration} | {pkg.minGuests}-{pkg.maxGuests} invitados
+                    {pkg.duration} | 50-125 invitados
                   </p>
                 </div>
 
@@ -90,6 +95,7 @@ export function Packages({ packages }: PackagesProps) {
                     Reservar
                   </Button>
                 </Link>
+                </div>
               </div>
             ))}
           </div>

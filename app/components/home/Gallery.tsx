@@ -3,12 +3,18 @@ import { StorybookDivider } from "~/components/decorative/StorybookDivider";
 import { WaveDivider } from "~/components/decorative/WaveDivider";
 
 const galleryImages = [
-  { id: 1, label: "Aventura en equipo", image: "/images/gallery/grupal-1.png", gradient: "from-enchant-300 to-cobalt-400" },
-  { id: 2, label: "Amigos magicos", image: "/images/gallery/grupal-2.png", gradient: "from-fairy-300 to-fairy-500" },
-  { id: 3, label: "Diversion sin fin", image: "/images/gallery/grupal-3.png", gradient: "from-magic-300 to-magic-500" },
-  { id: 4, label: "Momentos especiales", image: "/images/gallery/grupal-4.png", gradient: "from-lime-300 to-lime-500" },
-  { id: 5, label: "Mundo de fantasia", image: "/images/gallery/grupal-5.png", gradient: "from-orange-300 to-orange-500" },
-  { id: 6, label: "Todos juntos", image: "/images/gallery/grupal-6.png", gradient: "from-cobalt-300 to-enchant-400" },
+  { id: 1, label: "Nuestro salon", image: "/images/gallery/venue-overview.jpg" },
+  { id: 2, label: "Decoracion tematica", image: "/images/gallery/table-setup.jpg" },
+  { id: 3, label: "Area de juegos", image: "/images/gallery/playground-area.jpg" },
+  { id: 4, label: "Tobogan y alberca de pelotas", image: "/images/gallery/play-structure.jpg" },
+  { id: 5, label: "Diversion sin fin", image: "/images/gallery/ball-pit-fun.jpg" },
+  { id: 6, label: "Cuna de Estrellas", image: "/images/gallery/cuna-estrellas.jpg" },
+  { id: 7, label: "Caya Glam Studio", image: "/images/gallery/glam-studio.jpg" },
+  { id: 8, label: "Estacion de belleza", image: "/images/gallery/nail-polish-station.jpg" },
+  { id: 9, label: "Estacion de comida", image: "/images/gallery/food-station.jpg" },
+  { id: 10, label: "Momentos especiales", image: "/images/gallery/kids-playing.jpg" },
+  { id: 11, label: "Habia una vez", image: "/images/gallery/branded-backdrop.jpg" },
+  { id: 12, label: "Juegos interactivos", image: "/images/gallery/interactive-play.jpg" },
 ];
 
 export function Gallery() {
@@ -32,18 +38,19 @@ export function Gallery() {
             <StorybookDivider className="max-w-xs mx-auto mt-6" />
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
             {galleryImages.map((img, index) => (
               <div
                 key={img.id}
                 className="scroll-scale aspect-square rounded-2xl overflow-hidden group"
                 style={{ "--stagger": index } as React.CSSProperties}
               >
-                <div className={`relative w-full h-full bg-gradient-to-br ${img.gradient} group-hover:scale-105 transition-transform duration-500`}>
+                <div className="relative w-full h-full group-hover:scale-105 transition-transform duration-500">
                   <img
                     src={img.image}
                     alt={img.label}
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                   <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/40 to-transparent px-4 py-3 text-white font-heading font-semibold text-center text-sm sm:text-base">
                     {img.label}

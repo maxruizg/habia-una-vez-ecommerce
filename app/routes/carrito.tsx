@@ -9,6 +9,7 @@ import { CartItem } from "~/components/cart/CartItem";
 import { CartSummary } from "~/components/cart/CartSummary";
 import { Button } from "~/components/ui/Button";
 import { useCart } from "~/hooks/useCart";
+import { getDayTypeLabel } from "~/lib/utils";
 import {
   ShoppingCart,
   CalendarDays,
@@ -17,6 +18,7 @@ import {
   Package,
   Sparkles,
   Puzzle,
+  UtensilsCrossed,
 } from "lucide-react";
 
 export function meta({}: Route.MetaArgs) {
@@ -88,6 +90,11 @@ export default function Carrito({ loaderData }: Route.ComponentProps) {
                             <p className="font-heading font-bold text-slate-800">
                               {formatDate(cart.eventDate)}
                             </p>
+                            {cart.dayType && (
+                              <p className="text-xs text-slate-500 font-body">
+                                {getDayTypeLabel(cart.dayType)}
+                              </p>
+                            )}
                           </div>
                         </div>
                       )}
@@ -99,6 +106,32 @@ export default function Carrito({ loaderData }: Route.ComponentProps) {
                             <p className="font-heading font-bold text-slate-800">
                               {cart.guestCount} personas
                             </p>
+                            {cart.childCount !== undefined && cart.adultCount !== undefined && (
+                              <p className="text-xs text-slate-500 font-body">
+                                Ninos: {cart.childCount} / Adultos: {cart.adultCount}
+                              </p>
+                            )}
+                            {cart.guestTier && (
+                              <p className="text-xs text-slate-500 font-body">
+                                Capacidad: {cart.guestTier} PAX
+                              </p>
+                            )}
+                          </div>
+                        </div>
+                      )}
+                      {cart.selectedAdultMenu && cart.selectedAdultMenu.length > 0 && (
+                        <div className="flex items-center gap-2">
+                          <UtensilsCrossed className="w-5 h-5 text-magic-500" />
+                          <div>
+                            <p className="text-xs text-slate-500 font-body">Menu</p>
+                            <p className="text-xs text-slate-700 font-body">
+                              Adultos: {cart.selectedAdultMenu.join(", ")}
+                            </p>
+                            {cart.selectedKidsMenu && cart.selectedKidsMenu.length > 0 && (
+                              <p className="text-xs text-slate-700 font-body">
+                                Ninos: {cart.selectedKidsMenu.join(", ")}
+                              </p>
+                            )}
                           </div>
                         </div>
                       )}

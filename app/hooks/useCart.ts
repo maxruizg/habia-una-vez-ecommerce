@@ -32,6 +32,12 @@ export function useCart() {
     items: { type: "package" | "addon"; itemId: string; name: string; price: number; quantity: number }[];
     eventDate?: string;
     guestCount?: number;
+    childCount?: number;
+    adultCount?: number;
+    guestTier?: number;
+    dayType?: string;
+    selectedAdultMenu?: string[];
+    selectedKidsMenu?: string[];
   }) {
     fetcher.submit(
       {
@@ -39,6 +45,12 @@ export function useCart() {
         items: JSON.stringify(data.items),
         ...(data.eventDate ? { eventDate: data.eventDate } : {}),
         ...(data.guestCount ? { guestCount: String(data.guestCount) } : {}),
+        ...(data.childCount !== undefined ? { childCount: String(data.childCount) } : {}),
+        ...(data.adultCount !== undefined ? { adultCount: String(data.adultCount) } : {}),
+        ...(data.guestTier ? { guestTier: String(data.guestTier) } : {}),
+        ...(data.dayType ? { dayType: data.dayType } : {}),
+        ...(data.selectedAdultMenu?.length ? { selectedAdultMenu: JSON.stringify(data.selectedAdultMenu) } : {}),
+        ...(data.selectedKidsMenu?.length ? { selectedKidsMenu: JSON.stringify(data.selectedKidsMenu) } : {}),
       },
       { method: "POST", action: "/api/cart" }
     );

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Plus, Minus, Check } from "lucide-react";
+import { Plus, Minus, Check, Users } from "lucide-react";
 import { cn, formatCurrency } from "~/lib/utils";
 import type { PackageAddon } from "~/lib/types";
 
@@ -11,25 +11,30 @@ interface SelectedAddon {
 interface AddonSelectorProps {
   addons: PackageAddon[];
   selectedAddons: SelectedAddon[];
-  onToggle: (addonId: string) => void;
+  onToggle: (addonId: string, defaultQuantity?: number) => void;
   onQuantityChange: (addonId: string, quantity: number) => void;
+  childCount: number;
+  guestCount: number;
 }
 
 const categoryLabels: Record<string, string> = {
   personajes: "Personajes",
+  "menu-top": "Menu Top",
   comida: "Comida",
-  decoracion: "Decoración",
+  decoracion: "Decoracion",
   entretenimiento: "Entretenimiento",
   manualidades: "Manualidades",
 };
 
-const categoryOrder = ["decoracion", "comida", "entretenimiento", "manualidades"];
+const categoryOrder = ["menu-top", "decoracion", "comida", "entretenimiento", "manualidades"];
 
 export function AddonSelector({
   addons,
   selectedAddons,
   onToggle,
   onQuantityChange,
+  childCount,
+  guestCount,
 }: AddonSelectorProps) {
   const [activeTab, setActiveTab] = useState(categoryOrder[0]);
 
@@ -65,6 +70,8 @@ export function AddonSelector({
         {filteredAddons.map((addon) => {
           const selected = getSelected(addon.id);
           const isSelected = !!selected;
+          const isManualidades = addon.category === "manualidades";
+          const isPerPerson = addon.perPerson;
 
           return (
             <div
@@ -78,7 +85,13 @@ export function AddonSelector({
                 <h4 className="font-heading font-bold text-slate-800">{addon.name}</h4>
                 <button
                   type="button"
-                  onClick={() => onToggle(addon.id)}
+                  onClick={() => {
+                    if (isManualidades && !isSelected) {
+                      onToggle(addon.id, childCount);
+                    } else {
+                      onToggle(addon.id);
+                    }
+                  }}
                   className={cn(
                     "w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-all",
                     isSelected
@@ -93,9 +106,51 @@ export function AddonSelector({
               <div className="flex items-center justify-between">
                 <span className="font-heading font-bold text-enchant-600">
                   {formatCurrency(addon.price)}
+                  {isPerPerson && <span className="text-xs font-normal text-slate-500"> /persona</span>}
                 </span>
 
-                {isSelected && addon.maxQuantity && addon.maxQuantity > 1 && (
+                {/* Per-person pricing display */}
+                {isSelected && isPerPerson && (
+                  <div className="flex items-center gap-1 text-sm text-slate-600 font-heading">
+                    <Users className="w-3.5 h-3.5" />
+                    <span>
+                      x {guestCount} = <span className="font-bold text-enchant-600">{formatCurrency(addon.price * guestCount)}</span>
+                    </span>
+                  </div>
+                )}
+
+                {/* Manualidades quantity controls */}
+                {isSelected && isManualidades && (
+                  <div className="flex items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={() =>
+                        onQuantityChange(addon.id, Math.max(1, (selected?.quantity || 1) - 1))
+                      }
+                      className="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-slate-200"
+                    >
+                      <Minus className="w-3 h-3" />
+                    </button>
+                    <div className="text-center">
+                      <span className="text-sm font-heading font-bold w-6 text-center block">
+                        {selected?.quantity || 1}
+                      </span>
+                      <span className="text-[10px] text-slate-500">ninos</span>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() =>
+                        onQuantityChange(addon.id, (selected?.quantity || 1) + 1)
+                      }
+                      className="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-slate-200"
+                    >
+                      <Plus className="w-3 h-3" />
+                    </button>
+                  </div>
+                )}
+
+                {/* Regular quantity controls for non-manualidades, non-perPerson */}
+                {isSelected && !isManualidades && !isPerPerson && addon.maxQuantity && addon.maxQuantity > 1 && (
                   <div className="flex items-center gap-2">
                     <button
                       type="button"

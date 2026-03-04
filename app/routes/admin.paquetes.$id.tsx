@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import type { Route } from "./+types/admin.paquetes.$id";
 import { packages } from "~/lib/data";
-import { formatCurrency } from "~/lib/utils";
+import { formatCurrency, getMinPrice } from "~/lib/utils";
 import { Input } from "~/components/ui/Input";
 import { Textarea } from "~/components/ui/Textarea";
 import { Button } from "~/components/ui/Button";
@@ -49,13 +49,12 @@ export default function AdminPaqueteEdit({ loaderData, actionData }: Route.Compo
         <Input label="Nombre" name="name" defaultValue={pkg.name} />
         <Textarea label="Descripcion" name="description" defaultValue={pkg.description} />
         <div className="grid sm:grid-cols-2 gap-4">
-          <Input label="Precio" name="price" type="number" defaultValue={pkg.price} />
+          <Input label="Precio minimo (desde)" name="price" type="number" defaultValue={getMinPrice(pkg.pricingTiers)} disabled />
           <Input label="Duracion" name="duration" defaultValue={pkg.duration} />
         </div>
-        <div className="grid sm:grid-cols-2 gap-4">
-          <Input label="Min invitados" name="minGuests" type="number" defaultValue={pkg.minGuests} />
-          <Input label="Max invitados" name="maxGuests" type="number" defaultValue={pkg.maxGuests} />
-        </div>
+        <p className="text-xs text-slate-500 font-body">
+          Los precios escalonados se configuran por capacidad (50/75/100/125 PAX) y dia de la semana.
+        </p>
         <Textarea
           label="Incluye (uno por linea)"
           name="includes"

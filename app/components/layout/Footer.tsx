@@ -21,8 +21,8 @@ const defaultSettings: SiteSettings = {
   phone: "55 19 95 70 04",
   whatsapp: "5219957004",
   email: "contacto@habiaunavez.com",
-  address: "Cda. de Gruta 19, Jardines del Pedregal, Coyoacan, 01900 Ciudad de Mexico, CDMX",
-  instagram: "https://instagram.com/habiaunavez",
+  address: "Cda. de Gruta 19, Jardines del Pedregal, 01900 Alvaro Obregon, Ciudad de Mexico, CDMX",
+  instagram: "https://instagram.com/habiaunavezbypamhermo",
   facebook: "https://facebook.com/habiaunavez",
 };
 
@@ -70,6 +70,9 @@ export function Footer({ settings }: FooterProps) {
               </Link>
               <Link to="/#contacto" className="block text-slate-400 hover:text-enchant-400 transition-colors text-sm">
                 Contacto
+              </Link>
+              <Link to="/terminos" className="block text-slate-400 hover:text-enchant-400 transition-colors text-sm">
+                Terminos y Condiciones
               </Link>
             </div>
           </div>

@@ -11,7 +11,7 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export async function loader({}: Route.LoaderArgs) {
-  const bookings = getBookings();
+  const bookings = await getBookings();
 
   const totalBookings = bookings.length;
   const totalRevenue = bookings

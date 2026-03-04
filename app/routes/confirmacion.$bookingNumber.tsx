@@ -8,14 +8,15 @@ import { Footer } from "~/components/layout/Footer";
 import { PageContainer } from "~/components/layout/PageContainer";
 import { SparkleParticles } from "~/components/decorative/SparkleParticles";
 import { Button } from "~/components/ui/Button";
-import { CheckCircle, CalendarDays, Phone, Home, Sparkles } from "lucide-react";
+import { CheckCircle, CalendarDays, Phone, Home, Sparkles, UtensilsCrossed } from "lucide-react";
+import { getDayTypeLabel } from "~/lib/utils";
 
 export function meta({ params }: Route.MetaArgs) {
   return [{ title: `Confirmacion ${params.bookingNumber} | Habia una vez` }];
 }
 
 export async function loader({ params }: Route.LoaderArgs) {
-  const booking = getBookingByNumber(params.bookingNumber);
+  const booking = await getBookingByNumber(params.bookingNumber);
   if (!booking) {
     throw new Response("Reservacion no encontrada", { status: 404 });
   }
@@ -68,19 +69,53 @@ export default function Confirmacion({ loaderData }: Route.ComponentProps) {
             <div className="space-y-4 mb-6">
               <div className="flex justify-between py-2">
                 <span className="text-slate-600 font-body">Fecha del evento</span>
-                <span className="font-heading font-bold text-slate-800 flex items-center gap-2">
-                  <CalendarDays className="w-4 h-4 text-enchant-500" />
-                  {formatDate(booking.eventDate)}
-                </span>
+                <div className="text-right">
+                  <span className="font-heading font-bold text-slate-800 flex items-center gap-2 justify-end">
+                    <CalendarDays className="w-4 h-4 text-enchant-500" />
+                    {formatDate(booking.eventDate)}
+                  </span>
+                  {booking.dayType && (
+                    <p className="text-xs text-slate-500 font-body">{getDayTypeLabel(booking.dayType)}</p>
+                  )}
+                </div>
               </div>
               <div className="flex justify-between py-2">
                 <span className="text-slate-600 font-body">Paquete</span>
-                <span className="font-heading font-bold text-slate-800">{packageName}</span>
+                <div className="text-right">
+                  <span className="font-heading font-bold text-slate-800">{packageName}</span>
+                  {booking.guestTier && (
+                    <p className="text-xs text-slate-500 font-body">Capacidad: {booking.guestTier} PAX</p>
+                  )}
+                </div>
               </div>
               <div className="flex justify-between py-2">
                 <span className="text-slate-600 font-body">Invitados</span>
-                <span className="font-heading font-bold text-slate-800">{booking.guestCount}</span>
+                <div className="text-right">
+                  <span className="font-heading font-bold text-slate-800">{booking.guestCount}</span>
+                  {booking.childCount !== undefined && booking.adultCount !== undefined && (
+                    <p className="text-xs text-slate-500 font-body">
+                      Ninos: {booking.childCount} / Adultos: {booking.adultCount}
+                    </p>
+                  )}
+                </div>
               </div>
+
+              {booking.selectedAdultMenu && booking.selectedAdultMenu.length > 0 && (
+                <div className="py-2">
+                  <div className="flex items-center gap-2 mb-1">
+                    <UtensilsCrossed className="w-4 h-4 text-enchant-500" />
+                    <span className="text-slate-600 font-body">Menu</span>
+                  </div>
+                  <p className="text-xs text-slate-700 font-body ml-6">
+                    Adultos: {booking.selectedAdultMenu.join(", ")}
+                  </p>
+                  {booking.selectedKidsMenu && booking.selectedKidsMenu.length > 0 && (
+                    <p className="text-xs text-slate-700 font-body ml-6">
+                      Ninos: {booking.selectedKidsMenu.join(", ")}
+                    </p>
+                  )}
+                </div>
+              )}
 
               {bookingAddons.length > 0 && (
                 <div className="py-2">

@@ -15,6 +15,7 @@
       "routes/carrito": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/checkout": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/confirmacion.$bookingNumber": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/terminos": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/api.cart": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/admin.login": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/admin._index": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
@@ -74,6 +75,15 @@
         "parentId": "root",
         "file": "app/routes/confirmacion.$bookingNumber.tsx",
         "path": "confirmacion/:bookingNumber",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/terminos": {
+        "id": "routes/terminos",
+        "parentId": "root",
+        "file": "app/routes/terminos.tsx",
+        "path": "terminos",
         "config": {
           "runtime": "nodejs"
         }
@@ -224,6 +234,12 @@
         "file": "routes/confirmacion.$bookingNumber.tsx",
         "path": "confirmacion/:bookingNumber"
       },
+      "routes/terminos": {
+        "id": "routes/terminos",
+        "parentId": "root",
+        "file": "routes/terminos.tsx",
+        "path": "terminos"
+      },
       "routes/api.cart": {
         "id": "routes/api.cart",
         "parentId": "root",
@@ -323,6 +339,10 @@
           {
             "file": "routes/confirmacion.$bookingNumber.tsx",
             "path": "confirmacion/:bookingNumber"
+          },
+          {
+            "file": "routes/terminos.tsx",
+            "path": "terminos"
           },
           {
             "file": "routes/api.cart.ts",

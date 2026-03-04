@@ -18,8 +18,8 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export async function loader({}: Route.LoaderArgs) {
-  const blockedDates = getBlockedDates();
-  const bookings = getBookings();
+  const blockedDates = await getBlockedDates();
+  const bookings = await getBookings();
   const bookedDates = bookings
     .filter((b) => b.status !== "cancelada")
     .map((b) => b.eventDate);
@@ -34,12 +34,12 @@ export async function action({ request }: Route.ActionArgs) {
   if (intent === "block") {
     const date = formData.get("date") as string;
     const reason = formData.get("reason") as string;
-    addBlockedDate(date, reason || undefined);
+    await addBlockedDate(date, reason || undefined);
   }
 
   if (intent === "unblock") {
     const date = formData.get("date") as string;
-    removeBlockedDate(date);
+    await removeBlockedDate(date);
   }
 
   return { success: true };

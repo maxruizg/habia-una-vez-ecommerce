@@ -6,14 +6,15 @@ import type { Booking } from "~/lib/types";
 import { formatCurrency, formatDate } from "~/lib/utils";
 import { StatusBadge } from "~/components/admin/StatusBadge";
 import { Button } from "~/components/ui/Button";
-import { ArrowLeft, CalendarDays, Users, Mail, Phone } from "lucide-react";
+import { ArrowLeft, CalendarDays, Users, Mail, Phone, UtensilsCrossed } from "lucide-react";
+import { getDayTypeLabel } from "~/lib/utils";
 
 export function meta({}: Route.MetaArgs) {
   return [{ title: "Detalle de Reserva | Admin" }];
 }
 
 export async function loader({ params }: Route.LoaderArgs) {
-  const booking = getBooking(params.id);
+  const booking = await getBooking(params.id);
   if (!booking) throw new Response("No encontrado", { status: 404 });
 
   const pkg = packages.find((p) => p.id === booking.packageId);
@@ -28,7 +29,7 @@ export async function loader({ params }: Route.LoaderArgs) {
 export async function action({ request, params }: Route.ActionArgs) {
   const formData = await request.formData();
   const status = formData.get("status") as Booking["status"];
-  updateBookingStatus(params.id, status);
+  await updateBookingStatus(params.id, status);
   return { success: true };
 }
 
@@ -81,16 +82,42 @@ export default function AdminReservaDetail({ loaderData }: Route.ComponentProps)
           <div className="space-y-3">
             <div className="flex items-center gap-2 text-slate-700">
               <CalendarDays className="w-4 h-4 text-enchant-500" />
-              <span className="font-body">{formatDate(booking.eventDate)}</span>
+              <div>
+                <span className="font-body">{formatDate(booking.eventDate)}</span>
+                {booking.dayType && (
+                  <p className="text-xs text-slate-500">{getDayTypeLabel(booking.dayType)}</p>
+                )}
+              </div>
             </div>
             <div className="flex items-center gap-2 text-slate-700">
               <Users className="w-4 h-4 text-fairy-500" />
-              <span className="font-body">{booking.guestCount} invitados</span>
+              <div>
+                <span className="font-body">{booking.guestCount} invitados</span>
+                {booking.guestTier && (
+                  <p className="text-xs text-slate-500">Capacidad: {booking.guestTier} PAX</p>
+                )}
+                {booking.childCount !== undefined && booking.adultCount !== undefined && (
+                  <p className="text-xs text-slate-500">
+                    Ninos: {booking.childCount} / Adultos: {booking.adultCount}
+                  </p>
+                )}
+              </div>
             </div>
             <div>
               <span className="text-sm text-slate-500">Paquete: </span>
               <span className="font-heading font-bold text-slate-800">{packageName}</span>
             </div>
+            {booking.selectedAdultMenu && booking.selectedAdultMenu.length > 0 && (
+              <div className="flex items-start gap-2 text-slate-700">
+                <UtensilsCrossed className="w-4 h-4 text-magic-500 mt-0.5" />
+                <div>
+                  <p className="text-sm">Adultos: {booking.selectedAdultMenu.join(", ")}</p>
+                  {booking.selectedKidsMenu && booking.selectedKidsMenu.length > 0 && (
+                    <p className="text-sm">Ninos: {booking.selectedKidsMenu.join(", ")}</p>
+                  )}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

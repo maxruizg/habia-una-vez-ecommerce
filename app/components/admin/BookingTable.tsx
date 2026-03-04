@@ -33,6 +33,9 @@ export function BookingTable({ bookings }: BookingTableProps) {
                 Fecha
               </th>
               <th className="px-4 py-3 text-left text-xs font-heading font-bold text-slate-600 uppercase tracking-wide">
+                Invitados
+              </th>
+              <th className="px-4 py-3 text-left text-xs font-heading font-bold text-slate-600 uppercase tracking-wide">
                 Total
               </th>
               <th className="px-4 py-3 text-left text-xs font-heading font-bold text-slate-600 uppercase tracking-wide">
@@ -57,6 +60,19 @@ export function BookingTable({ bookings }: BookingTableProps) {
                 </td>
                 <td className="px-4 py-3 text-sm font-body text-slate-700">
                   {formatDateShort(booking.eventDate)}
+                </td>
+                <td className="px-4 py-3 text-sm font-body text-slate-700">
+                  <span className="font-heading font-bold">{booking.guestCount}</span>
+                  {booking.childCount !== undefined && booking.adultCount !== undefined && (
+                    <span className="block text-xs text-slate-500">
+                      N: {booking.childCount} / A: {booking.adultCount}
+                    </span>
+                  )}
+                  {booking.guestTier && (
+                    <span className="block text-xs text-slate-400">
+                      Tier: {booking.guestTier} PAX
+                    </span>
+                  )}
                 </td>
                 <td className="px-4 py-3 text-sm font-heading font-bold text-slate-800">
                   {formatCurrency(booking.subtotal)}

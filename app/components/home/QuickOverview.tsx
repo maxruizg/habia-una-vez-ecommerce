@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { DollarSign, Users, MapPin, PartyPopper } from "lucide-react";
 
 const pills = [
-  { icon: DollarSign, text: "Desde $8,500" },
-  { icon: Users, text: "20-80 invitados" },
+  { icon: DollarSign, text: "Desde $35,000" },
+  { icon: Users, text: "50-125 invitados" },
   { icon: MapPin, text: "Jardines del Pedregal" },
   { icon: PartyPopper, text: "200+ fiestas" },
 ];

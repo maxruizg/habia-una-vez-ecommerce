@@ -1,9 +1,10 @@
-import { Form } from "react-router";
+import { Form, Link } from "react-router";
 import { Input } from "~/components/ui/Input";
 import { Textarea } from "~/components/ui/Textarea";
 import { Button } from "~/components/ui/Button";
 import { formatCurrency, formatDate } from "~/lib/utils";
-import { CreditCard, CalendarDays, Package, Puzzle } from "lucide-react";
+import { CreditCard, CalendarDays, Package, Puzzle, UtensilsCrossed } from "lucide-react";
+import { getDayTypeLabel } from "~/lib/utils";
 import type { Cart } from "~/lib/cart.server";
 
 interface CheckoutFormProps {
@@ -61,6 +62,25 @@ export function CheckoutForm({ cart, subtotal, errors, isSubmitting }: CheckoutF
             <div>
               <p className="text-sm text-slate-600">Fecha del evento</p>
               <p className="font-heading font-bold text-slate-800">{formatDate(cart.eventDate)}</p>
+              {cart.dayType && (
+                <p className="text-xs text-slate-500 font-body">{getDayTypeLabel(cart.dayType)}</p>
+              )}
+              {cart.guestTier && (
+                <p className="text-xs text-slate-500 font-body">Capacidad: {cart.guestTier} PAX</p>
+              )}
+            </div>
+          </div>
+        )}
+
+        {cart.selectedAdultMenu && cart.selectedAdultMenu.length > 0 && (
+          <div className="flex items-center gap-3 mb-4 p-3 bg-magic-50 rounded-xl">
+            <UtensilsCrossed className="w-5 h-5 text-magic-600" />
+            <div>
+              <p className="text-sm text-slate-600">Menu seleccionado</p>
+              <p className="text-xs text-slate-700 font-body">Adultos: {cart.selectedAdultMenu.join(", ")}</p>
+              {cart.selectedKidsMenu && cart.selectedKidsMenu.length > 0 && (
+                <p className="text-xs text-slate-700 font-body">Ninos: {cart.selectedKidsMenu.join(", ")}</p>
+              )}
             </div>
           </div>
         )}
@@ -106,6 +126,31 @@ export function CheckoutForm({ cart, subtotal, errors, isSubmitting }: CheckoutF
           name="notes"
           placeholder="Alergias, tematica especifica, peticiones especiales..."
         />
+      </div>
+
+      {/* Terms & Conditions */}
+      <div className="magic-card p-6">
+        <label className="flex items-start gap-3 cursor-pointer">
+          <input
+            type="checkbox"
+            name="termsAccepted"
+            value="on"
+            className="mt-1 w-4 h-4 rounded border-slate-300 text-enchant-500 focus:ring-enchant-500 accent-enchant-500"
+          />
+          <span className="text-sm text-slate-700 font-body">
+            Acepto los{" "}
+            <Link
+              to="/terminos"
+              target="_blank"
+              className="text-enchant-600 underline hover:text-enchant-700 font-semibold"
+            >
+              Terminos y Condiciones
+            </Link>
+          </span>
+        </label>
+        {errors?.termsAccepted && (
+          <p className="text-sm text-red-500 mt-2 font-body">{errors.termsAccepted}</p>
+        )}
       </div>
 
       {/* Submit */}

@@ -22,6 +22,7 @@ export const checkoutSchema = z.object({
   email: z.email("Email invalido"),
   phone: z.string().min(10, "Telefono invalido"),
   notes: z.string().optional(),
+  termsAccepted: z.literal("on", { message: "Debes aceptar los terminos y condiciones" }),
 });
 
 export const contactSchema = z.object({

@@ -9,10 +9,18 @@ export interface CartItem {
   image?: string;
 }
 
+import type { GuestTier, DayType } from "./types";
+
 export interface Cart {
   items: CartItem[];
   eventDate?: string;
   guestCount?: number;
+  childCount?: number;
+  adultCount?: number;
+  guestTier?: GuestTier;
+  dayType?: DayType;
+  selectedAdultMenu?: string[];
+  selectedKidsMenu?: string[];
 }
 
 const cartSessionSecret = process.env.SESSION_SECRET || "default-dev-secret-change-in-production";
@@ -45,7 +53,7 @@ export async function setCart(request: Request, cart: Cart) {
   return cartStorage.commitSession(session);
 }
 
-export async function addToCart(request: Request, item: CartItem, eventDate?: string, guestCount?: number) {
+export async function addToCart(request: Request, item: CartItem, eventDate?: string, guestCount?: number, childCount?: number, adultCount?: number) {
   const session = await getCartSession(request);
   const cart = (session.get("cart") as Cart) || { items: [] };
 
@@ -65,6 +73,8 @@ export async function addToCart(request: Request, item: CartItem, eventDate?: st
 
   if (eventDate) cart.eventDate = eventDate;
   if (guestCount) cart.guestCount = guestCount;
+  if (childCount !== undefined) cart.childCount = childCount;
+  if (adultCount !== undefined) cart.adultCount = adultCount;
 
   session.set("cart", cart);
   return cartStorage.commitSession(session);
@@ -100,10 +110,19 @@ export async function setCartItems(
   request: Request,
   items: CartItem[],
   eventDate?: string,
-  guestCount?: number
+  guestCount?: number,
+  childCount?: number,
+  adultCount?: number,
+  guestTier?: GuestTier,
+  dayType?: DayType,
+  selectedAdultMenu?: string[],
+  selectedKidsMenu?: string[]
 ) {
   const session = await getCartSession(request);
-  const cart: Cart = { items, eventDate, guestCount };
+  const cart: Cart = {
+    items, eventDate, guestCount, childCount, adultCount,
+    guestTier, dayType, selectedAdultMenu, selectedKidsMenu,
+  };
   session.set("cart", cart);
   return cartStorage.commitSession(session);
 }

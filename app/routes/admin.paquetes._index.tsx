@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import type { Route } from "./+types/admin.paquetes._index";
 import { packages } from "~/lib/data";
-import { formatCurrency } from "~/lib/utils";
+import { formatCurrency, getMinPrice } from "~/lib/utils";
 import { Badge } from "~/components/ui/Badge";
 import { Edit, Crown } from "lucide-react";
 
@@ -36,11 +36,14 @@ export default function AdminPaquetes({ loaderData }: Route.ComponentProps) {
             <p className="text-sm text-slate-600 font-body mb-4">{pkg.description}</p>
 
             <div className="flex justify-between items-center mb-4">
-              <span className="font-heading text-2xl font-bold text-enchant-600">
-                {formatCurrency(pkg.price)}
-              </span>
+              <div>
+                <span className="text-xs text-slate-400 font-body">desde </span>
+                <span className="font-heading text-2xl font-bold text-enchant-600">
+                  {formatCurrency(getMinPrice(pkg.pricingTiers))}
+                </span>
+              </div>
               <span className="text-sm text-slate-500">
-                {pkg.duration} | {pkg.minGuests}-{pkg.maxGuests} invitados
+                {pkg.duration} | 50-125 invitados
               </span>
             </div>
 

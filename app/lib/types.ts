@@ -1,25 +1,41 @@
+export type GuestTier = 50 | 75 | 100 | 125;
+export type DayType = "weekday" | "weekend";
+
+export interface TierPrice {
+  apertura: number;
+  regular: number;
+}
+
+export interface PackageMenuConfig {
+  adultOptions: { id: string; name: string }[];
+  adultMaxPicks: number;
+  kidsOptions: { id: string; name: string }[];
+  kidsMaxPicks: number;
+}
+
 export interface EventPackage {
   id: string;
   name: string;
   slug: string;
   description: string;
-  price: number;
+  pricingTiers: Record<DayType, Partial<Record<GuestTier, TierPrice>>>;
+  guestTiers: GuestTier[];
   duration: string;
-  minGuests: number;
-  maxGuests: number;
   includes: string[];
   isPremium: boolean;
   image?: string;
+  menuConfig?: PackageMenuConfig;
 }
 
 export interface PackageAddon {
   id: string;
   name: string;
-  category: "personajes" | "comida" | "decoracion" | "entretenimiento" | "manualidades";
+  category: "personajes" | "comida" | "decoracion" | "entretenimiento" | "manualidades" | "menu-top";
   description: string;
   price: number;
   image?: string;
   maxQuantity?: number;
+  perPerson?: boolean;
 }
 
 export interface Character {
@@ -53,6 +69,12 @@ export interface Booking {
   packageId: string;
   eventDate: string;
   guestCount: number;
+  childCount?: number;
+  adultCount?: number;
+  guestTier?: GuestTier;
+  dayType?: DayType;
+  selectedAdultMenu?: string[];
+  selectedKidsMenu?: string[];
   addons: { addonId: string; quantity: number }[];
   subtotal: number;
   status: "pendiente" | "confirmada" | "cancelada" | "completada";

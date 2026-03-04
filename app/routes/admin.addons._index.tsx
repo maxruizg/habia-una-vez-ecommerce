@@ -13,14 +13,16 @@ export async function loader({}: Route.LoaderArgs) {
 
 const categoryLabels: Record<string, string> = {
   personajes: "Personajes",
+  "menu-top": "Menu Top",
   comida: "Comida",
-  decoracion: "Decoración",
+  decoracion: "Decoracion",
   entretenimiento: "Entretenimiento",
   manualidades: "Manualidades",
 };
 
 const categoryColors: Record<string, "enchant" | "fairy" | "magic" | "gold"> = {
   personajes: "magic",
+  "menu-top": "gold",
   comida: "gold",
   decoracion: "fairy",
   entretenimiento: "enchant",
